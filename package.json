@@ -1,0 +1,66 @@
+{
+  "name": "cgv",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "ckeditor": "^4.9.2",
+    "cross-env": "^5.2.0",
+    "css-loader": "^0.28.11",
+    "node-sass-chokidar": "^1.4.0",
+    "npm-run-all": "^4.1.3",
+    "style-loader": "^0.21.0"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "bootstrap": "^4.4.1",
+    "font-awesome": "^4.7.0",
+    "google-map-react": "^1.0.9",
+    "json-server": "^0.14.0",
+    "node": "^13.8.0",
+    "node-modules": "^1.0.1",
+    "node-sass": "^4.13.1",
+    "react": "^16.5.2",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.4",
+    "react-slick": "^0.25.2",
+    "redux": "^4.0.0",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^0.16.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.83.0",
+    "slick-carousel": "^1.8.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "sync-dev": "scp -rv ./build/* townweb:/opt/apps/webapp-dev/",
+    "deploy-dev": "cross-env REACT_APP_DEPLOY_ENV=development npm run build && npm run sync-dev",
+    "sync-prod": "scp -rv ./build/* townweb:/opt/apps/webapp-prod",
+    "deploy-prod": "cross-env REACT_APP_DEPLOY_ENV=production npm run build && npm run sync-prod"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

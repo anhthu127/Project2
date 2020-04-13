@@ -1,0 +1,123 @@
+.wrap-footer{
+
+    clear: both;
+    height: 500px;
+    width: 100%;
+    background: #313537;
+}
+
+.more-infor{ 
+    clear: both;
+    background: #262626;
+padding: 35px 0px;
+}
+.more-infor .subcribe-and-social{
+    padding: 0px 100px;
+}
+.title-subcribe{
+    color: #fff;
+    display: block;
+}
+.title-subcribe p{
+    color: #aaaaaa;
+}
+.form{
+    display: block;
+    overflow: auto;
+    padding-top: 20px;
+}
+.input-email{
+    height: 40px;
+    background: none;
+    border: none;
+    border-bottom: 1px #939393 solid;
+    border-radius: 0;
+    padding: 0;
+    width: calc(70% - 50px);
+    margin-bottom: 2px;
+    color: #fff;
+    padding-right: 30px;
+    box-shadow : none;
+  
+}
+.btn-subscribe{
+    padding-left:  20px;
+    padding-right: 20px;
+    border-radius: 0px;
+    border: none;
+    float: right;
+    background: #ffc000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    width: 30%;
+    height: 40px;
+}
+.wrap-bottom{
+    padding:40px 0 0;
+}
+.information-policy{
+
+}
+.information-policy .infor{
+    border-bottom: 2px #ffc000 solid;
+   text-align: center;
+    color: #fff;
+    position: relative;
+    margin:0 0 30px;
+    padding-bottom:10px;
+}
+.information-policy .list-menu{
+list-style: none;
+}
+.list-menu .menu-item{
+    padding: 5px, 0px;
+}
+.menu-item #a{
+    padding-bottom: 7px;
+    color: #fff;
+    font-size: 14px;
+    background: transparent;
+    font-weight: 500;
+}
+
+.menu-item #a:hover{
+    
+    color: #ffc000;
+    border-bottom: 1px #ffc000 solid;
+padding: 0px;
+font-weight: 500;
+}
+.about-contact{
+
+}
+.about-contact .contact{
+    color: #fff;
+    border-bottom: 2px #ffc000 solid;
+    text-align: center;
+     color: #fff;
+     position: relative;
+     margin:0 0 30px;
+     padding-bottom:10px;
+}
+.about-contact .contact:hover{
+
+}
+.about-contact .menu-contact{
+    list-style: none;
+
+}
+.menu-contact li{display: inline;}
+.menu-contact .icon-top{
+    display: block;
+
+}
+.menu-contact .icon-top i{
+    color: #ffc000
+
+}
+.menu-contact .span-top{
+    clear: both;
+    color: #fff;
+
+}

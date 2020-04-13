@@ -1,0 +1,22 @@
+.wrap-news{
+    width: 100%;
+    font-size: 24px;
+     font-weight: bold;
+    text-align: center;
+}
+.wrap-news .title-box{
+    width: 100%;
+    color: #000;
+    display: inline-block;
+    border-bottom: 2px #ffc000 solid;
+    padding-bottom:3px
+}
+.title-box a{
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.title-box a:hover{
+    color: #ffc000;
+    text-decoration: none;
+}

@@ -1,0 +1,57 @@
+#filter{
+
+}
+.title{
+    color: #000;
+}
+.title a{
+    font-size: 24px;
+    color: #000;
+}
+.filter{
+
+}
+.filter .sort-by{
+    width: 100%;
+    display: inline-block;
+padding-left: 50px;
+}
+.sort-by #label{
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 38px;
+    width: 30%;
+    color: #000;
+    float: left;
+    display: inline-block;
+}
+.sort-by .title-sort{
+    width: 200;
+    height: 38px;
+    line-height: 38px;
+    font:normal;
+    float: left;
+    font-size: 18px;
+    text-align: center;
+    border:solid 0.5px #ebebeb;
+    margin-top: 5px;
+ 
+}
+.title-sort li{
+    width: 200px;
+    list-style : none;
+ }
+.title-sort li span{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.sort-by .wrap-item{
+    list-style-type: none;
+    display: none;
+    position: relative;
+}
+.wrap-item .sort-item{
+    list-style: none;
+}
+ 

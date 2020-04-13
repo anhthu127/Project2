@@ -1,0 +1,135 @@
+{
+  "account": [
+    {
+      "id": "",
+      "full_name": "",
+      "phone_num": "",
+      "address": "",
+      "user_name": "",
+      "password": "",
+      "type_account": "",
+      "recipt_id": "",
+      "user_id": "",
+      "cart_id": ""
+    }
+  ],
+  "recepit": [
+    {
+      "id": "",
+      "recipt_id": "",
+      "staff_id": "",
+      "city_id": "",
+      "district_id": "",
+      "detail_address": "",
+      "product": [
+        {
+          "product_id": "",
+          "product_name": "",
+          "price": "",
+          "quantity": ""
+        }
+      ],
+      "total_recipt": "",
+      "create_at": ""
+    }
+  ],
+  "cart": [
+    {
+      "id": "",
+      "user_id": "",
+      "product": [
+        {
+          "product_id": "",
+          "product_name": "",
+          "price": "",
+          "quantity": ""
+        }
+      ],
+      "total_money": ""
+    }
+  ],
+  "product": [
+    {
+      "id": "1",
+      "product_name": "máy nổ",
+      "product_id": "p001",
+      "price": "250000",
+      "description": "máy nổ hiện đại",
+      "review": [
+        {
+          "review": "",
+          "user_id": ""
+        }
+      ],
+      "supplier": "",
+      "status": "",
+      "color": "",
+      "quantity": "",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": ""
+    },
+    {
+      "product_name": "21432",
+      "product_id": "",
+      "price": " ",
+      "description": " ",
+      "supplier": "23432",
+      "status": "",
+      "color": "",
+      "quantity": "",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": "",
+      "id": "TVPLXzZ"
+    },
+    {
+      "product_name": "afdsfa",
+      "product_id": "",
+      "price": " ",
+      "description": " ",
+      "supplier": "sfafs",
+      "status": "",
+      "color": "",
+      "quantity": "",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": "",
+      "id": "gtGVU6H"
+    }
+  ],
+  "discount": [
+    {
+      "id": "",
+      "product_id": "",
+      "percent": "",
+      "start_at": "",
+      "end_at": ""
+    }
+  ],
+  "uni_product": [
+    {
+      "product_name": "máy nổ",
+      "product_id": "MN",
+      "price": " 2.000.000",
+      "description": "Sản phẩm chất lượng cao",
+      "supplier": "QSA",
+      "status": "01",
+      "quantity": "5",
+      "discount": "10",
+      "discount_price": "20000",
+      "ori_price": "1.500.000",
+      "tag": "bán chạy",
+      "image": [
+        {
+          "file": null,
+          "imgUrl": "",
+          "alt": "",
+          "content": "",
+          "isDeleted": false
+        }
+      ],
+      "id": 1
+    }
+  ]
+}

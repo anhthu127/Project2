@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Alisson Becker",
+            "price": "700000",
+            "discount": "20%",
+            "descript": "Alisson Ramses Becker, được biết với cái tên Alisson, là cầu thủ bóng đá người Brasil thi đấu ở vị trí thủ môn cho câu lạc bộ của Anh Liverpool và đội tuyển Brasil",
+            "src_img": ""
+        },
+        {
+            "id": 2,
+            "name": "Alisson Becker",
+            "price": "700000",
+            "discount": "20%",
+            "src_img": "",
+            "descript": "Alisson Ramses Becker, được biết với cái tên Alisson, là cầu thủ bóng đá người Brasil thi đấu ở vị trí thủ môn cho câu lạc bộ của Anh Liverpool và đội tuyển Brasil"
+        },
+        {
+            "id": 3,
+            "name": "Alisson Becker",
+            "price": "700000",
+            "discount": "20%",
+            "src_img": "",
+            "descript": "Alisson Ramses Becker, được biết với cái tên Alisson, là cầu thủ bóng đá người Brasil thi đấu ở vị trí thủ môn cho câu lạc bộ của Anh Liverpool và đội tuyển Brasil"
+        }
+    ]
+}

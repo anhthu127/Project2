@@ -1,0 +1,239 @@
+.wrap-body{
+    width: 100%;
+    height: auto;
+
+}
+.wrap-slider{
+    width: 100%;
+    height: 500px;
+
+}
+.wrap-body .slider{
+    object-fit: cover;
+    object-fit: contain;
+    width: 800px;
+    height: 500px;
+    padding-right: 50px;
+    padding-left: 100px;
+}
+.slider img{
+    height: 500px;
+
+}
+
+.discount-products{
+    clear: both;
+    height: 450px;
+    width: 100%;
+    background:  #eef3f5;
+
+}
+.discount-products .wrap-discount-products{
+    padding-left: 100px;
+    padding-right: 50px;
+    overflow: center;
+    padding-top: 35px;
+    width: 100%;
+}
+.wrap-discount-products Col{
+    border: tan 1px solid;
+    margin-right: 0px;
+    /* width: 25%; */
+}
+#discount-ads{
+    margin: 0px;
+    padding: 0px;
+}
+#discount-ads h2 {
+    display: inline-block;
+    position: relative;
+     display: inline-block;
+    font-size: 30px;
+    color: #000
+}
+#discount-ads h2 a{
+  text-transform: uppercase;
+    display: inline;
+    color: #000;
+}
+#discount-ads h2 a span{
+    text-transform: uppercase;
+font-size: 20px;
+display: inline-block;
+color: #000;
+}
+#discount-ads img{
+    border: 0px none;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.wrap-infor-products{
+    height: 100%;
+    padding-left: 35px;
+}
+ 
+.wrap-infor-products .slick-arrow {
+  opacity: -2;
+
+ }
+.wrap-infor-products:hover{
+  opacity: 1;
+ }
+.slick-arrow:hover{
+  opacity: 1;
+}
+#slider-slick{
+    width: 100%;
+    height: 300px;
+    
+  }
+  .slick-slide{
+    padding: 20px;
+  }
+  #item-slick{
+    width: 30%;
+    height: 100%;
+    padding: 20px;
+    background: #ffffff;
+   border: 1px #e1e1e1 solid;
+  }
+  #item-slick img{
+    width: 100%;
+    height:250px;
+  }
+  #item-slick .icon{
+    position: absolute;
+    border-radius: 50%;
+    background: #f6ab00  ;
+    left:0;
+    top: 180px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .35s ease;
+  }
+  
+.icon a {
+    width: 200px;
+    padding: 12px 48px;
+    text-align: center;
+    color: white;
+    border: solid 2px white;
+    z-index: 1;
+  }
+  .item-slick:hover .button {
+    opacity: 1;
+  }
+  
+  #item-slick .name-box {
+    width: 100%;
+     font-weight: bold;
+    margin: 10px 0px 5px;
+  }
+  .name-box .name{
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000000;
+ 
+  }
+  .name:hover { 
+   overflow: visible;
+   white-space: pre-line;
+   width: 500px;
+ }
+  .name{
+    margin: 0px;
+    text-decoration: none;
+    font-weight: inherit;
+  }
+ .best-sell-products{
+   padding:0px 100px ;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   width: 100%;
+   height: 600px;
+   }
+ .best-sell-products .wrap-best-sell-prpoduct{
+    width: 100%;
+    height: 100%;
+  }
+  .wrap-title{
+     width: 100%;
+  /* border: coral 2px solid; */
+  }
+  .wrap-title .h-title{
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .h-title a{
+    color: #000;
+  }
+  .wrap-best-sell-prpoduct .wrap-detail-products{
+                         
+  }
+  .wrap-detail-products .wrap-title{
+     width: 100%;
+  }
+  .wrap-title .h-title{
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px #ffc000 solid;
+  }
+  .h-title a{
+    color: #000;
+    display: inline-block;
+   text-decoration: none;
+    padding-bottom:3px
+  }
+  .h-title a:hover{
+    color: #ffc000;
+    text-decoration: none;
+  }
+  .wrap-detail-products #products-item{
+    height: 500px;
+   padding: 20px;
+    margin:0px;
+   }
+   #products-item .box-title{
+    font-size: 18px;
+     text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+    background: #ffc000;
+    }
+   .box-title a{
+     color: #000;
+     display: inline-block;
+     padding:10px 20px 8px;
+    }
+    .infor-product{
+      font-size: 18px;
+      display: inline-block;
+    }
+    .infor-product .title{
+      display: block;
+      font-size: 18px;
+      word-spacing: inherit;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      margin: 0px;
+      padding: 10px 0px 5px;
+    }
+    .title a{
+      font-size: 18px;
+    }
+    .infor-product .price-box{
+      font-size:16px;
+      color: #ffc000;
+      font-weight: bold;
+      display: block;
+    }
+    .infor-product #origin{
+      font-size: 16px;
+      color: #8a8a8a;
+      text-decoration: line-through;
+    }
