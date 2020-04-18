@@ -13,9 +13,9 @@ export default class Router extends React.Component {
   render() {
     return (
       <div className="content">
-        <HashRouter >
+        <BrowserRouter >
           <div>
-              <Switch>
+            <Switch>
               <Route exact path="/home-admin" component={page.AdminHome} />
               <Route exact path="/" component={page.HomeContainer} />
               <Route path='/login' component={page.Login} />
@@ -35,8 +35,8 @@ export default class Router extends React.Component {
               <Route path='/mnager-admin' component={page.Manager} />
               <Route path='/receipt-admin' component={page.Receipt} />
             </Switch>
-           </div>
-        </HashRouter>
+          </div>
+        </BrowserRouter>
       </div>
     )
   }
