@@ -1,9 +1,9 @@
 import React from 'react';
 import "../../Styles/Home.css"
 import BOH from './BOH'
-import Header from "../Header"
+import Header from "../Component/Header"
 import 'font-awesome/css/font-awesome.min.css';
-import FooterOfHome from "../FooterOfHome";
+import FooterOfHome from "../Component/FooterOfHome";
 import News from './NewOfHome';
 import { Row, Col, Form, Button } from 'react-bootstrap';
 
@@ -17,14 +17,14 @@ export default class Home extends React.Component {
             }
         }
     }
-    componentDidMount(){
+    componentDidMount() {
 
     }
     render() {
         return (
             <div className='home-page'>
                 <header className='header '>
-                 <Header  {...this.props}></Header>
+                    <Header  {...this.props}></Header>
                 </header>
                 <div style={{ height: "35px", width: "100%" }}></div>
                 <div className="body-page">
@@ -40,7 +40,7 @@ export default class Home extends React.Component {
                     </section>
 
                 </div>
-                <footer style={{clear:'both'}}>
+                <footer style={{ clear: 'both' }}>
                     <FooterOfHome  {...this.props}>
                     </FooterOfHome>
                 </footer>

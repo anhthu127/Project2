@@ -3,6 +3,7 @@ import { Carousel, Row, Col } from 'react-bootstrap'
 import "../../Styles/BOH.css"
 import Slider from "react-slick";
 import { Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -219,7 +220,9 @@ export default class BOH extends React.Component {
                             <Col lg={6} id="products-item">
                                 <h2 className='box-title'>
                                     <a href='#' title='LINH KIEN CO KHI'>
-                                        bán chạy</a>
+                                        <Link to={"best-selling"} >
+                                            bán chạy
+                                        </Link></a>
                                 </h2>
                                 <Row className='list-product-mini'>
                                     <Col lg={4} id='wrap-title'>
@@ -325,7 +328,10 @@ export default class BOH extends React.Component {
                             <Col lg={6} id="products-item">
                                 <h2 className='box-title'>
                                     <a href='#' title='LINH KIEN CO KHI'>
-                                        Mới Nhập</a>
+                                        <Link to={"new-product"}>
+                                            mới nhập
+                                       </Link>
+                                    </a>
                                 </h2>
 
                                 <Row className='list-product-mini'>
