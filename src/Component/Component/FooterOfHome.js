@@ -1,6 +1,6 @@
 import React from 'react'
 import { Carousel, Row, Col, Form } from 'react-bootstrap';
-import '../Styles/FooterOfHome.css'
+import '../../Styles/FooterOfHome.css'
 import { Image } from 'react-bootstrap';
 export default class FooterOfHome extends React.Component {
     constructor(props) {
@@ -34,7 +34,7 @@ export default class FooterOfHome extends React.Component {
                 </section>
                 <Row className= "wrap-bottom">
                     <Col lg={4} className="logo">
-                        <a>   <Image src={require('../Images/006994.png')} thumbnail></Image>
+                        <a>   <Image src={require('../../Images/006994.png')} thumbnail></Image>
                         </a>
                         <div className='social'>
                             <p>Kênh thông tin</p>

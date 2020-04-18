@@ -1,5 +1,5 @@
 import React from 'react'
-import "../Styles/Header.css"
+import "../../Styles/Header.css"
 import 'font-awesome/css/font-awesome.min.css';
 import { Link } from 'react-router-dom';
 
@@ -18,12 +18,12 @@ export default class Header extends React.Component {
                         <div id="say-hello">
                             <p>
                                 Chào mừng bạn đến với chợ dụng cụ cơ khí
-                </p>
+                            </p>
                         </div>
                         <div id='wrap-account'>
                             <span id="login" > <Link to={"/login"}>Đăng nhập</Link> |</span>
                             <span id="regist"  >
-                                <Link to ={'/register'}> Đăng kí</Link></span>
+                                <Link to={'/register'}> Đăng kí</Link></span>
                         </div></div>
 
                 </section>
@@ -39,7 +39,7 @@ export default class Header extends React.Component {
 
                         <div className="logo">
                             <a>
-                                <img src={require('./../Images/006994.png')}></img>
+                                <img src={require('../../Images/006994.png')}></img>
                             </a>
                         </div>
                         <div className="addr">
@@ -114,11 +114,21 @@ export default class Header extends React.Component {
                             </li>
 
                             <li className="item">
-                                <span href="/home">Trang chủ</span>
+                                <span href="/Home">
+                                    <a><Link to={"Home"}>Trang chủ</Link></a></span>
 
                             </li>
-                            <li className="item"><span href="/products">Sản phẩm</span></li>
-                            <li className="item"><span href="about.asp">Thông tin</span></li>
+                            <li className="item"><span href="/products"><a>
+                                <Link to={"/products"}>
+                                    Sản phẩm
+                                    </Link>
+                            </a></span></li>
+                            <li className="item">
+                                <span href="/hot-news"> <a>
+                                    <Link to={"/hot-news"}>
+                                        Thông tin
+                                        </Link>
+                                </a></span></li>
                         </ul>
                         <form className="search-bar">
                             <input className="input" type="search" placeholder="Tìm kiếm..."></input>
