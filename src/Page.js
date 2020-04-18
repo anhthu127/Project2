@@ -6,11 +6,11 @@ import DefaultPage from './Container/Default'
 import Staff from './Admin/Container/Staff'
 import Receipt from './Admin/Container/Receipt'
 import Manager from './Admin/Container/Manager'
-import Product from './Admin/Container/Product'
-import UniProduct from './Admin/Container/UniqueProduct'
-import Register from './Container/Account/RegisterContainer'
-import AdminHome from "./Admin/Menu"
-import Example from "./Component/Example"
+// import Register from "./Component/Account/Register"
+import Product from './Admin/Container/Product';
+import UniProduct from './Admin/Container/UniqueProduct';
+import AdminHome from "./Admin/Menu";
+import Example from "./Component/Example";
 export {
     HomeContainer,
     Login,
@@ -22,7 +22,7 @@ export {
     Receipt,
     Manager,
     Product,
-    Register,
+    // Register,
     UniProduct,
     Example
 }
