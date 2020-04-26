@@ -1,5 +1,4 @@
 import React from 'react';
-import { domain } from '../../../Constant'
 import { isNull } from 'util';
 
 class DetailUniProduct extends React.Component {
@@ -60,8 +59,7 @@ class DetailUniProduct extends React.Component {
         }
     }
     _updateUniProduct() {
-        console.log("states beforer  update: " + JSON.stringify(this.state.uniPro))
-        this.props.updateUniProduct(this.state.uniPro);
+         this.props.updateUniProduct(this.state.uniPro);
     }
     _Clear() {
         this.setState({
@@ -88,7 +86,7 @@ class DetailUniProduct extends React.Component {
             }],
         })
     }
-    async _convertState() {
+    async convertState() {
         await this.setState({
             uniPro: {
                 ... this.state.uniPro,
@@ -113,7 +111,7 @@ class DetailUniProduct extends React.Component {
             <span>
                 <button type="button" className="btn btn-primary"
                     data-toggle="modal" data-target={"#" + this.props.update}
-                    onClick={() => this._convertState()
+                    onClick={() => this.convertState()
                     }>Chi tiết</button>
                 <div className="modal fade" id={this.props.update} role="dialog">
                     <div className="modal-dialog">
@@ -217,7 +215,7 @@ class DetailUniProduct extends React.Component {
                                             onChange={(e) => {
                                                 this.setState({
                                                     uniPro: {
-                                                        ...this.state.uniPro, 
+                                                        ...this.state.uniPro,
                                                         ori_price: e.target.value
                                                     }
                                                 })
@@ -230,7 +228,7 @@ class DetailUniProduct extends React.Component {
                                             onChange={(e) => {
                                                 this.setState({
                                                     uniPro: {
-                                                        ...this.state.uniPro, 
+                                                        ...this.state.uniPro,
                                                         tag: e.target.value
                                                     }
                                                 })
@@ -253,14 +251,14 @@ class DetailUniProduct extends React.Component {
                                     </div>
                                     <div>
                                         <label className="name-label" >Giá đã giảm</label>
-                                        <input type="text" value={this.state.uniPro.discount_price} 
-                                        className="form1" placeholder="Thêm mô tả"
+                                        <input type="text" value={this.state.uniPro.discount_price}
+                                            className="form1" placeholder="Thêm mô tả"
                                             onChange={(e) => {
                                                 this.setState({
                                                     uniPro: {
                                                         ...this.state.uniPro,
                                                         discount_price: e.target.value,
-                                              
+
                                                     }
                                                 })
                                             }} />

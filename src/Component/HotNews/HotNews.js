@@ -22,8 +22,6 @@ class HotNews extends React.Component {
 
                     </section>
                 </body>
-
-
                 <footer>
                     <FooterOfHome />
                 </footer> */}

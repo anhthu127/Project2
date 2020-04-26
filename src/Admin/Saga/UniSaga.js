@@ -1,9 +1,9 @@
 import * as type from "../../Constant"
-import AddUni from "../FetchAPI/UniProduct/AddUniProduct"
-import GetUni from '../FetchAPI/UniProduct/GetUniProduct'
-import UpdateUni from '../FetchAPI/UniProduct/UpdateUniProduct'
 import { put, takeEvery } from 'redux-saga/effects';
-import DeleteUni from '../FetchAPI/UniProduct/DelUniProduct'
+import AddUni from "../FetchAPI/Product/AddUniProduct"
+import GetUni from '../FetchAPI/Product/GetUniProduct'
+import UpdateUni from '../FetchAPI/Product/UpdateUniProduct'
+import DeleteUni from '../FetchAPI/Product/DelUniProduct'
 function* getUniProduct(action) {
     try {
          const responseData = yield GetUni(action.payload);

@@ -1,18 +1,18 @@
 import React from 'react'
-import UniqueProduct from '../Components/UniProduct/UniqueProduct'
-  import { connect } from 'react-redux'
-import * as action from "../Action/UniProductAction"
+import ProductManagement from '../Components/ProductManagement/ProductManagement'
+import { connect } from 'react-redux'
+import * as action from "../Action/ProductAction"
 
-class UniProduct extends React.Component {
+class Product extends React.Component {
 
     componentDidMount() {
-
+        console.log("props: " + this.props)
         this.props.initLoad();
     }
     render() {
         return (
             <div>
-                 <UniqueProduct {...this.props} />
+                <ProductManagement {...this.props} />
             </div>
         )
     }
@@ -34,7 +34,7 @@ const mapDispatchToProps = (dispatch) => {
             dispatch(action._CreateUniProduct(data))
         },
         updateUniProduct: (data) => {
-             dispatch(action._UpdateUniProduct(data))
+            dispatch(action._UpdateUniProduct(data))
         },
         delUniProduct: (data) => {
             dispatch(action._DeleteUniProduct(data))
@@ -42,4 +42,4 @@ const mapDispatchToProps = (dispatch) => {
 
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(UniProduct)
+export default connect(mapStateToProps, mapDispatchToProps)(Product)

@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
@@ -18,7 +16,7 @@ sagaMiddleware.run(rootSaga);
 render(
     <Provider store={store}>
         <App />
-        
+
     </Provider>
     ,
     document.getElementById('root')

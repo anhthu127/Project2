@@ -1,7 +1,9 @@
 import React from 'react'
-import CustomerComponent from '../Components/Customer'
+import * as action from "../Action/CustomerAction"
+import CustomerComponent from '../Components/CustomerAccount/CustomerAccount'
+import { connect } from 'react-redux'
 
-export default class Customer extends React.Component {
+class Customer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -12,8 +14,24 @@ export default class Customer extends React.Component {
     render() {
         return (
             <div>
-                <CustomerComponent {...this.state} />
+                <CustomerComponent {...this.props} />
             </div>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        ListAccount: state.Cus.payload
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        initLoad: () => {
+            dispatch(action._GetListAccount())
+        }
+
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Customer)

@@ -38,9 +38,9 @@ export default class Header extends React.Component {
                     <div className='wrap-middle-header'>
 
                         <div className="logo">
-                            <a>
+                            <Link to={'/home'}>
                                 <img src={require('../../Images/006994.png')}></img>
-                            </a>
+                            </Link>
                         </div>
                         <div className="addr">
                             <ul
@@ -106,29 +106,29 @@ export default class Header extends React.Component {
                                     <i className='fa fa-bars' id="sub-menu"> </i>
                                 Danh sách sản phẩm</span>
                                 <div className='sub-menu'>
-                                    <a href='#'>Máy hàn </a>
-                                    <a href='#'>Dụng cụ cầm tay </a>
-                                    <a href='#'>Dụng cụ cơ khí </a>
-                                    <a href='#'>Dụng cụ xây dựng </a>
+                                    <Link to={"/"}>Máy hàn </Link>
+                                    <Link to={"/"}>Dụng cụ cầm tay </Link>
+                                    <Link to={"/"}>Dụng cụ cơ khí </Link>
+                                    <Link to={"/"}>Dụng cụ xây dựng </Link>
                                 </div>
                             </li>
 
                             <li className="item">
                                 <span href="/Home">
-                                    <a><Link to={"Home"}>Trang chủ</Link></a></span>
+                                    <Link to={"Home"}>Trang chủ</Link> </span>
 
                             </li>
-                            <li className="item"><span href="/products"><a>
-                                <Link to={"/products"}>
+                            <li className="item"><span href="/products">
+                                <Link to={"products"}>
                                     Sản phẩm
                                     </Link>
-                            </a></span></li>
+                            </span></li>
                             <li className="item">
-                                <span href="/hot-news"> <a>
-                                    <Link to={"/hot-news"}>
+                                <span href="/hot-news">
+                                    <Link to={"hot-news"}>
                                         Thông tin
                                         </Link>
-                                </a></span></li>
+                                </span></li>
                         </ul>
                         <form className="search-bar">
                             <input className="input" type="search" placeholder="Tìm kiếm..."></input>
