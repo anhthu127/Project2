@@ -240,7 +240,7 @@ height: 60px;
     width: 278px;
     border: none;
     overflow: auto;
-   
+   padding-left: 10px;
 }
 .search-bar button{
     height: 40px;

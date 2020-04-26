@@ -219,15 +219,15 @@ export default class BOH extends React.Component {
                         <Row className="wrap-detail-products">
                             <Col lg={6} id="products-item">
                                 <h2 className='box-title'>
-                                    <a href='#' title='LINH KIEN CO KHI'>
-                                        <Link to={"best-selling"} >
-                                            bán chạy
-                                        </Link></a>
+                                    <Link to={"product/best-selling"} title='LINH KIEN CO KHI' >
+                                        bán chạy
+                                    </Link>
                                 </h2>
                                 <Row className='list-product-mini'>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">
+                                                <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -243,7 +243,9 @@ export default class BOH extends React.Component {
                                     </Col>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">
+                                                <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            </div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -258,7 +260,7 @@ export default class BOH extends React.Component {
                                     </Col>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -276,7 +278,7 @@ export default class BOH extends React.Component {
                                 <Row className='list-product-mini'>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -291,7 +293,7 @@ export default class BOH extends React.Component {
                                     </Col>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -307,7 +309,7 @@ export default class BOH extends React.Component {
                                     </Col>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -327,17 +329,16 @@ export default class BOH extends React.Component {
                             </Col>
                             <Col lg={6} id="products-item">
                                 <h2 className='box-title'>
-                                    <a href='#' title='LINH KIEN CO KHI'>
-                                        <Link to={"new-product"}>
-                                            mới nhập
+                                    <Link to={"product/new-product"} title='LINH KIEN CO KHI'>
+                                        mới nhập
                                        </Link>
-                                    </a>
+
                                 </h2>
 
                                 <Row className='list-product-mini'>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -353,7 +354,7 @@ export default class BOH extends React.Component {
                                     </Col>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -369,7 +370,7 @@ export default class BOH extends React.Component {
                                     </Col>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -387,7 +388,7 @@ export default class BOH extends React.Component {
                                 <Row className='list-product-mini'>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -403,7 +404,7 @@ export default class BOH extends React.Component {
                                     </Col>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>
@@ -420,7 +421,7 @@ export default class BOH extends React.Component {
                                     </Col>
                                     <Col lg={4} id='wrap-title'>
                                         <div className="">
-                                            <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
+                                            <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
                                                 <h3 className='title'>
                                                     <a> may no</a>

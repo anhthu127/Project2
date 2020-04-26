@@ -1,0 +1,13 @@
+.header{
+background: #eef3f5;
+display: inline-block;
+/* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+.header .admin-login {
+    text-transform: uppercase;
+}
+.header .admin-login:hover{
+    color: #ffc00f;
+    text-transform: uppercase;
+
+}

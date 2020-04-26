@@ -163,6 +163,7 @@ color: #000;
      width: 100%;
   /* border: coral 2px solid; */
   }
+   
   .wrap-title .h-title{
     text-transform: uppercase;
     font-weight: bold;
@@ -176,6 +177,9 @@ color: #000;
   .wrap-detail-products .wrap-title{
      width: 100%;
   }
+  /* .wrap-title .img-thumbnail :hover{
+    box-shadow: 5px 5px 5px 5px grey;
+  } */
   .wrap-title .h-title{
     font-size: 24px;
     font-weight: bold;
@@ -208,6 +212,10 @@ color: #000;
      color: #000;
      display: inline-block;
      padding:10px 20px 8px;
+    }
+    .box-title a:hover{
+
+      color: #fff;
     }
     .infor-product{
       font-size: 18px;

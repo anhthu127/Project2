@@ -1,16 +1,46 @@
 {
   "account": [
     {
-      "id": "",
-      "full_name": "",
-      "phone_num": "",
+      "id": "1",
+      "full_name": "full_name",
+      "phone_num": "123456",
       "address": "",
       "user_name": "",
       "password": "",
       "type_account": "",
       "recipt_id": "",
       "user_id": "",
-      "cart_id": ""
+      "cart_id": "",
+      "creat_at": "",
+      "last_login": "",
+      "last_failed_login": "",
+      "ip": "",
+      "divice": "",
+      "times_of_order": ""
+    }
+  ],
+  "staff": [
+    {
+      "id": "0",
+      "full_name": "full_naem",
+      "phone_num": "123456",
+      "address": "",
+      "identify": "",
+      "user_name": "user_name",
+      "password": "123123",
+      "total_hours": "",
+      "salary": [
+        {
+          "id": "",
+          "month":"",
+          "date": "",
+          "start_at": "",
+          "finish_at": "",
+          "salary_per_hour": "",
+          "total_hours_per_day": ""
+        }
+      ],
+      "total_salary": ""
     }
   ],
   "recepit": [

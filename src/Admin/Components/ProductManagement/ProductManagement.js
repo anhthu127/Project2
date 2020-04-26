@@ -6,8 +6,10 @@ import ButtonDetail from "./ModalDetail"
 import ButtonDelete from "./ModalDelete"
 import ButtonCreate from './ModalCreate'
 import ModalSearch from './ModalSearchUniProduct'
+import { Link } from 'react-router-dom'
+import Header from '../Header'
 // import ModalCreate from './ModalCreate'
-export default class UniqueProducts extends React.Component {
+export default class ProductManagement extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -16,11 +18,11 @@ export default class UniqueProducts extends React.Component {
             price: " ",
             description: " ",
             supplier: "",
-              quantity: "",
+            quantity: "",
             discount: "",
             discount_price: "",
             ori_price: "",
-            id:"",
+            id: "",
             tag: "",
             image: [{
                 file: null,
@@ -28,12 +30,20 @@ export default class UniqueProducts extends React.Component {
                 alt: '',
                 content: '',
                 isDeleted: false
-            }]
+            }],
+
+            check_variable: {
+                isLogin: "false"
+            }
         }
 
     }
-
+    componentDidMount() {
+        console.log("props " + JSON.stringify(this.props))
+    }
+    // làm list để chọn cho tag sản phẩm
     render() {
+        console.log(JSON.stringify(this.props))
 
         let show;
         if (this.props.listUniProduct) {
@@ -48,14 +58,14 @@ export default class UniqueProducts extends React.Component {
                             {item.supplier}
                             {/* <img src={require(item.image.imgUrl)}></img> */}
                         </td>
-                        <td colSpan="1" className="initLoad"> {item.price }</td>
-                        <td colSpan="1" className="initLoad"> {item.discount }</td>
+                        <td colSpan="1" className="initLoad"> {item.price}</td>
+                        <td colSpan="1" className="initLoad"> {item.discount}</td>
                         <td colSpan="1" className="initLoad"> {item.quantity}</td>
                         <td colSpan="1" className="initLoad"> {item.ori_price}</td>
                         <td colSpan="1" className="initLoad"> {item.tag}</td>
 
                         <td colSpan="2">
-                            <ButtonDetail item={item} update={update} {...this.props}  />
+                            <ButtonDetail item={item} update={update} {...this.props} />
                             <ButtonDelete item={item} deleteData={deleteData} {...this.props} />
 
                         </td>
@@ -72,9 +82,10 @@ export default class UniqueProducts extends React.Component {
                         <Menu  ></Menu>
                     </Col>
                     <Col lg={10} className='wrap-content'>
+                        <Header {...this.props} />
                         <section className="body-content" >
-                            <ModalSearch {...this.props}/>
-                            <ButtonCreate  {...this.props}/>
+                            <ModalSearch {...this.props} />
+                            <ButtonCreate  {...this.props} />
                             <div className="table-responsive">
                                 <table className="table table-striped">
                                     <thead>
