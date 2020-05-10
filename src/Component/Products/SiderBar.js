@@ -9,6 +9,14 @@ export default class SiderBar extends React.Component {
     }
 
     render() {
+        const path = history.location.pathname;
+        const dungpin = (path.match('^/dung-pin') || path.match('^/dung-pin')) && "active";
+        const cokhi = path.match('^/co-khi') && "active";
+        const xaydung = path.match('^/xay-dung') && "active";
+        const giadinh = path.match('^/gia-dinh') && "active";
+        const camtay = path.match('^/cam-tay') && "active";
+        const mayno = path.match('^/may-no') && "active";
+        const maycat = path.match('^/may-cat') && "active";
         return (
                 <aside className='wrap-nav-sidebar'>
                     <h2 className='title-nav-side'>
