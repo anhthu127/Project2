@@ -1,5 +1,5 @@
 .nor-item{
-
+float: inline-block;
 }
 .nor-item #img{
     border: none;
@@ -9,4 +9,7 @@
 }
 .price-box{
 
+}
+.item-product-onhover{
+    
 }

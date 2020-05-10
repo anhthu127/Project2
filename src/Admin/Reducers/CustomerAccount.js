@@ -9,7 +9,6 @@ export default (state = DEFAULT_STATE, action) => {
             return {
                 ...state,
             };
-
         case type.get_list_account_success:
             return {
                 ...state,

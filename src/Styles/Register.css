@@ -52,7 +52,7 @@ input {
   
   .firstName ,
   .email,
-  .password{
+  .username{
     margin-right: 1%;
   }
   .address{
@@ -60,7 +60,7 @@ input {
   }
   .lastName,
   .phoneNumber,
-  .confirmPassword {
+  .username {
    margin-left: 1%;
 
    }
@@ -70,7 +70,7 @@ input {
   .email,
   .phoneNumber,
   .address,
-  .confirmPassword,
+  .username,
   .password {
     display: flex;
     flex-direction: column;
@@ -79,7 +79,7 @@ input {
   
   .firstName,
   .email,
-  .confirmPassword,
+  .username,
   .password,
   .phoneNumber,
   .lastName {
@@ -87,7 +87,9 @@ input {
     margin-left: 0px;
   }
   
- 
+ #password-unhidden{
+   position: relative;
+ }
 
  .capcha-input{
      width: 100px;
@@ -107,6 +109,9 @@ input {
  }
  .act-btn{
      width: 125px;
-     margin-left: 50px;
-     
+     margin-left: 50px; 
+ }
+ .act-btn .link{
+   color: #fff;
+   text-decoration: none;
  }

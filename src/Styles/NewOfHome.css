@@ -1,22 +1,25 @@
 .wrap-news{
     width: 100%;
-    font-size: 24px;
+    font-size: 20px;
      font-weight: bold;
+     background:#eef3f5;
     text-align: center;
 }
-.wrap-news .title-box{
+.wrap-news .new-title-box{
     width: 100%;
     color: #000;
     display: inline-block;
     border-bottom: 2px #ffc000 solid;
     padding-bottom:3px
 }
-.title-box a{
+.new-title-box a{
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
     color: #000;
+    font-size: 25px;
     text-transform: uppercase;
     text-decoration: none;
 }
-.title-box a:hover{
+.new-title-box a:hover{
     color: #ffc000;
     text-decoration: none;
 }

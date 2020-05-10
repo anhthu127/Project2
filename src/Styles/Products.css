@@ -40,7 +40,8 @@ clear: both;
 
 }
 .product-collection .item-product{
-    
+    float: left;
+    display: inline-block;
 }
 
 .item-product .detail {

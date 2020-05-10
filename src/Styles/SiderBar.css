@@ -29,12 +29,15 @@ overflow: hidden;
 .nav-ul .nav-item{
     text-decoration: none;
     list-style: none;
-    border-bottom:   solid 0.5px #ebebeb;
-    font-size: 14px;
+    border-bottom:  solid 0.5px #ebebeb;
+    font-size: 15px;
+    height: 40px;
 
 }
 .nav-item a{
     color: #000;
+    font-size: 15px;
+    padding-left: 15px;
 }
 
 .nav-item:hover a{

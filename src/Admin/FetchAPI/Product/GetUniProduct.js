@@ -2,7 +2,7 @@ import { domain } from '../../../Constant'
 
 export default function getUniProduct() {
   return new Promise((resolve, reject) => {
-     const url = domain + "/uni_product"
+     const url = domain + "/product"
     fetch(url, {
       method: 'GET'
     })

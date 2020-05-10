@@ -221,7 +221,7 @@ color: #000;
       font-size: 18px;
       display: inline-block;
     }
-    .infor-product .title{
+    .infor-product .title-in-home{
       display: block;
       font-size: 18px;
       word-spacing: inherit;
@@ -231,7 +231,7 @@ color: #000;
       margin: 0px;
       padding: 10px 0px 5px;
     }
-    .title a{
+    .title-in-home a{
       font-size: 18px;
     }
     .infor-product .price-box{

@@ -3,7 +3,7 @@ export default function addUniProduct(data) {
 
   return new Promise((resolve, reject) => {
 
-    const url = domain+ '/uni_product/'+data 
+    const url = domain+ '/product/'+data 
     fetch(url, {
         method: 'DELETE'
       })

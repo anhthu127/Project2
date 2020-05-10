@@ -32,7 +32,7 @@
       "salary": [
         {
           "id": "",
-          "month":"",
+          "month": "",
           "date": "",
           "start_at": "",
           "finish_at": "",
@@ -79,11 +79,13 @@
     }
   ],
   "product": [
+
     {
       "id": "1",
       "product_name": "máy nổ",
       "product_id": "p001",
       "price": "250000",
+      "type":"05",
       "description": "máy nổ hiện đại",
       "review": [
         {
@@ -97,16 +99,106 @@
       "quantity": "",
       "discount": "",
       "discount_price": "",
-      "ori_price": ""
+      "ori_price": "",
+      "url": "may-no.jpg"
+    }, 
+    {
+      "id": "2",
+      "product_name": "máy nổ",
+      "product_id": "p001",
+      "price": "250000",
+      "type": "06",
+      "description": "máy nổ hiện đại",
+      "review": [
+        {
+          "review": "",
+          "user_id": ""
+        }
+      ],
+      "supplier": "",
+      "status": "",
+      "color": "",
+      "quantity": "",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": "",
+      "url": "may-no.jpg"
+    }, 
+    {
+      "id": "3",
+      "product_name": "máy nổ",
+      "product_id": "p001",
+      "price": "250000",
+      "type": "03",
+      "description": "máy nổ hiện đại",
+      "review": [
+        {
+          "review": "",
+          "user_id": ""
+        }
+      ],
+      "supplier": "",
+      "status": "",
+      "color": "",
+      "quantity": "",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": "",
+      "url": "may-no.jpg"
+    }, 
+    {
+      "id": "4",
+      "product_name": "máy nổ",
+      "product_id": "p001",
+      "price": "250000",
+      "type": "02",
+      "description": "máy nổ hiện đại",
+      "review": [
+        {
+          "review": "",
+          "user_id": ""
+        }
+      ],
+      "supplier": "",
+      "status": "",
+      "color": "",
+      "quantity": "",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": "",
+      "url": "may-no.jpg"
     },
     {
-      "product_name": "21432",
+      "id": "4",
+      "product_name": "máy nổ",
+      "product_id": "p001",
+      "price": "250000",
+      "type": "01",
+      "description": "máy nổ hiện đại",
+      "review": [
+        {
+          "review": "",
+          "user_id": ""
+        }
+      ],
+      "supplier": "",
+      "status": "",
+      "color": "",
+      "quantity": "",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": "",
+      "url": "may-no.jpg"
+    },
+    {
+      "product_name": "masy nooooo",
       "product_id": "",
       "price": " ",
       "description": " ",
       "supplier": "23432",
       "status": "",
       "color": "",
+      "type":"04",
       "quantity": "",
       "discount": "",
       "discount_price": "",
@@ -114,12 +206,13 @@
       "id": "TVPLXzZ"
     },
     {
-      "product_name": "afdsfa",
+      "product_name": "may ma 06",
       "product_id": "",
       "price": " ",
       "description": " ",
       "supplier": "sfafs",
       "status": "",
+      "type": "06",
       "color": "",
       "quantity": "",
       "discount": "",

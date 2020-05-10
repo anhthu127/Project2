@@ -9,36 +9,29 @@ export default class AdminLogin extends React.Component {
         this.state = {
             count: 0,
             isLoading: false,
-            isLogin: false,
+            isLogin: null,
             url: "#",
             account: {
                 username: "",
                 password: "",
-            }
+            },
+            isPressedLogin: false,
+
         }
     }
 
     async submitLogin() {
-        await this.setState({
-            ...this.state,
-            isLoading: true,
-            count: 1,
-        })
-        console.log("count: " + JSON.stringify(this.state.count))
-
+        this.setState({ isPressedLogin: true })
         await this.props.CheckLogin(this.state.account)
-        await this.setState({
-            ...this.state,
-            count: 0,
-        })
-
     }
+
+
     Clear() {
         this.setState({
             ...this.state,
             count: 0,
+            isPressedLogin: false,
             isLoading: false,
-            isLogin: false,
             url: "#",
             account: {
                 username: "",
@@ -46,8 +39,7 @@ export default class AdminLogin extends React.Component {
             }
         })
     }
-    componentDidMount() {
-    }
+
 
     Login() {
 
@@ -120,43 +112,34 @@ export default class AdminLogin extends React.Component {
     render() {
 
         let LoginComponent = this.Login();
-        // if (this.state.isLoading) {
-        //     LoginComponent = <GlobalLoading />
-        // }
-        // else {
-        //     LoginComponent = this.Login()
-        // }
 
-
-        var keys;
-        if (this.props.StaffAccount) {
-            keys = Object.keys(this.props.StaffAccount);
-            console.log("hihi: " + JSON.stringify(keys.length))
-            if (keys.length > 0) {
-                this.setState({
-                    ... this.state,
-                    isLogin: true,
-
-                })
+        if ((!this.props.StaffAccount || this.props.StaffAccount == "") && !this.state.isPressedLogin) {
+            return (
+                <div>
+                    {LoginComponent}
+                </div>
+            )
+        } else if (!this.props.StaffAccount && this.state.isPressedLogin) {
+            return (
+                <GlobalLoading />
+            )
+        } else {
+            if (this.props.StaffAccount == "") {
+                alert('sai mk')
+                this.Clear()
+                this.props.RefreshStore()
+                return (
+                    <div>
+                        {LoginComponent}
+                    </div>
+                )
+            } else {
+                console.log('vao day')
+                window.location.href = `http://localhost:3000/admin/` + this.state.account.username
+                return null;
             }
-            if (this.state.count === 1 && this.state.isLogin === false) {
-                alert("tài khoản mật khẩu sai")
 
-            }
         }
 
-        if (this.state.isLogin) {
-            this.setState({
-                ... this.state,
-                isLoading: false
-            })
-            window.location.href = `http://localhost:3000/admin/` + this.state.account.username
-        }
-
-        return (
-            <div>
-                {LoginComponent}
-            </div>
-        )
     }
 }

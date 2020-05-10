@@ -17,7 +17,7 @@ export default class ProductManagement extends React.Component {
             product_id: "",
             price: " ",
             description: " ",
-            supplier: "",
+            suplier: "",
             quantity: "",
             discount: "",
             discount_price: "",
@@ -55,7 +55,7 @@ export default class ProductManagement extends React.Component {
                         <td colSpan="1" className="initLoad">{item.product_id} </td>
                         <td colSpan="1" className="initLoad">{item.product_name} </td>
                         <td className="initLoad">
-                            {item.supplier}
+                            {item.suplier}
                             {/* <img src={require(item.image.imgUrl)}></img> */}
                         </td>
                         <td colSpan="1" className="initLoad"> {item.price}</td>
@@ -63,7 +63,6 @@ export default class ProductManagement extends React.Component {
                         <td colSpan="1" className="initLoad"> {item.quantity}</td>
                         <td colSpan="1" className="initLoad"> {item.ori_price}</td>
                         <td colSpan="1" className="initLoad"> {item.tag}</td>
-
                         <td colSpan="2">
                             <ButtonDetail item={item} update={update} {...this.props} />
                             <ButtonDelete item={item} deleteData={deleteData} {...this.props} />
@@ -107,7 +106,6 @@ export default class ProductManagement extends React.Component {
                                 </table>
                             </div>
                         </section>
-
                     </Col>
                 </Row>
             </div >

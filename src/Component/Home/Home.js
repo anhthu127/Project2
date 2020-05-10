@@ -5,7 +5,6 @@ import Header from "../Component/Header"
 import 'font-awesome/css/font-awesome.min.css';
 import FooterOfHome from "../Component/FooterOfHome";
 import News from './NewOfHome';
-import { Row, Col, Form, Button } from 'react-bootstrap';
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -33,12 +32,16 @@ export default class Home extends React.Component {
                     <section className="news" style={{
                         width: '100%',
                         height: '500px',
-                        padding: "0px 100px"
-                        // background: '#208a95 '
+                        padding: "0px 100px",
+                        background: "#eef3f5"
                     }}>
                         <News></News>
-                    </section>
 
+                    </section>
+                    <div style={{
+                        width: "100%",
+                        height: "30px"
+                    }}></div>
                 </div>
                 <footer style={{ clear: 'both' }}>
                     <FooterOfHome  {...this.props}>

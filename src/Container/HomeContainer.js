@@ -7,14 +7,14 @@ class HomeContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            listProduct:"",
+            listProduct: "",
             numProducts: "",
             category: {
 
             }
         }
     }
-  
+
     render() {
         return (
             <div>
@@ -23,7 +23,6 @@ class HomeContainer extends React.Component {
         )
     }
 }
-
 const mapDispatchToProps = (dispatch) => {
     return {
         getAdsProduct: () => {
@@ -33,7 +32,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 const mapStateToProps = (store) => {
     return {
-listProduct: store.home.listProduct
+        listProduct: store.home.listProduct
     }
 }
 

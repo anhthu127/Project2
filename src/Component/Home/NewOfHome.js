@@ -13,7 +13,7 @@ export default class News extends React.Component {
     render() {
         return (
             <div className='wrap-news'>
-                <h2 className='title-box'>
+                <h2 className='new-title-box'>
                     <Link to={"/hot-news"}>
                         Góc tin tức
                     </Link>

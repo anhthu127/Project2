@@ -47,8 +47,7 @@ export default class AdminHome extends Component {
         let content;
         switch (window.location.href) {
             case "http://localhost:3000/admin/salary-staff":
-                // console.log("salary : " +salary)
-                content = <Salary  {... this.props} />
+                 content = <Salary  {... this.props} />
                 break;
             case "http://localhost:3000/admin/statistical":
                 content = statistical

@@ -6,7 +6,7 @@ export default function getAds() {
     return new Promise((resolve, reject) => {
         const url = domain + '/product'
         fetch(url, {
-            method: "POST",
+            method: "GET",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify()
         })

@@ -13,14 +13,15 @@ export default class Item extends React.Component {
                 <a>  <Image id='img' src={require('../../Images/may-no.jpg')} thumbnail ></Image> </a>
                 <div className='title-box'>
                     <div><span>
-                        Máy nổ
-                </span></div>
+                        {this.props.product_name}
+                    </span></div>
                 </div>
                 <div className='price-box'>
                     <div>
-                        <a>1.000.000đ</a>
+                        <a>{this.props.discount_price}</a>
                     </div>
                 </div>
             </div>
-        )}
+        )
+    }
 }

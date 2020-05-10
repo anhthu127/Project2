@@ -5,8 +5,6 @@ const DEFAULT_STATE = {
 }
 export default (state = DEFAULT_STATE, action) => {
     switch (action.type) {
-
-
         case type.login_account_request:
             return {
                 ...state,
@@ -20,6 +18,10 @@ export default (state = DEFAULT_STATE, action) => {
             return {
                 ...state
             };
+        case type.refresh_store_request:
+            return {
+                staffAccount: null
+            }
         default:
             return state;
     }

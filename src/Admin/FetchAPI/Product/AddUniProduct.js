@@ -3,7 +3,7 @@ export default function addUniProduct(data) {
 
   return new Promise((resolve, reject) => {
 
-    const url = domain + '/uni_product'
+    const url = domain + '/product'
     fetch(url, {
       method: 'POST',
       headers: { "Content-type": "application/json" },

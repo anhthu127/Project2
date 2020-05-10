@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, HashRouter } from 'react-router-dom';
 import * as page from '../Page';
- 
- 
+
+
 export default class Router extends React.Component {
   constructor(props) {
     super(props)
@@ -16,11 +16,14 @@ export default class Router extends React.Component {
         <BrowserRouter >
           <div>
             <Switch>
+              <Route path="/test" component={page.Test} />
               <Route exact path="/login/admin" component={page.AdminLogin} />
               <Route path="/admin" component={page.AdminHome} />
               <Route exact path="/" component={page.HomeContainer} />
+              <Route path='/register' component={page.Register} />
               <Route path='/login' component={page.Login} />
               <Route path='/products' component={page.ProductContainer} />
+              {/* <Route exact path='/products/:id' component={page.ProductContainer} /> */}
               <Route path='/product/best-selling' component={page.BestSelling} />
               <Route path='/product/new-product' component={page.NewProducts} />
               <Route path='/hot-news' component={page.HotNews} />

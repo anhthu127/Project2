@@ -1,30 +1,31 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom'
-import Header from '../Header';
+import { Redirect, Link } from 'react-router-dom'
+import Header from '../Component/Header';
 import '../../Styles/Register.css'
-import FooterOfHome from '../FooterOfHome';
+import FooterOfHome from '../Component/FooterOfHome';
 import { Row, Button, Col } from 'react-bootstrap';
-import { TRUE } from 'node-sass';
+import { input, Icon } from 'semantic-ui-react';
 var lettersRegex = RegExp(/^[0-9a-zA-Z]+$/);
 var phoneRegex = RegExp(/^[0-9]+$/);
 const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 
-const formValid = ({ formErrors, ...rest }) => {
-    let valid = true;
+const formValid = ({ formErrors, user }) => {
+    let invalid = false;
 
-    // validate form errors being empty
     Object.values(formErrors).forEach(val => {
-        val.length > 0 && (valid = false);
+        console.log("formError : " + JSON.stringify(formErrors))
+
+        val.length > 0 && (invalid = false);
     });
 
-    // validate the form was filled out
-    Object.values(rest).forEach(val => {
-        val === null && (valid = false);
+    Object.values(user).forEach(val => {
+        console.log("rét : " + JSON.stringify(user))
+        val != null || (invalid = false);
+        console.log(val != null)
     });
-
-    return valid;
+    return invalid;
 };
 export default class RegisterComponent extends Component {
     constructor(props) {
@@ -34,25 +35,37 @@ export default class RegisterComponent extends Component {
                 firstName: null,
                 lastName: null,
                 email: null,
+                username: null,
                 phoneNumber: null,
                 password: null,
                 confirmPassword: null,
                 address: null,
 
-
+                type_account: null,
+                recipt_id: null,
+                cart_id: null,
+                creat_at: null,
+                last_login: null,
+                last_failed_login: null,
+                ip: null,
+                divice: null,
+                times_of_order: null,
             },
+            url: "#",
             code: "",
             isFlag: false,
-            hidden: true,
-            display: false,
+            isHidden: "password",
+            display: "none",
             capcha_valid: "valid capcha",
             border: "null",
             color: "#000",
-
+            count: 0,
+            onChange: 0,
             formErrors: {
                 firstName: "",
                 lastName: "",
                 email: "",
+                username: "",
                 phoneNumberCheck0: "",
                 phoneNumberCheckdigit: "",
                 phoneNumber: "",
@@ -66,18 +79,27 @@ export default class RegisterComponent extends Component {
         }
     }
     componentDidMount() {
+
         this._genCapcha();
-        console.log("this.props: " + JSON.stringify(this.props))
+
     }
     handleChange = e => {
+        console.log("state: " + JSON.stringify(this.state.user))
         e.preventDefault();
-        const { name, value } = e.target;
-        let formErrors = { ...this.state.formErrors };
 
+        const { name, value } = e.target;
+        this.setState({
+            ...this.state,
+            user: {
+                [name]: value,
+            }
+        })
+        let formErrors = this.state.formErrors;
         switch (name) {
             case "firstName":
-                formErrors.firstName =
-                    value.length < 3 ? "Tối thiểu 3 kí tự" : "";
+                if (formErrors.firstName = value.length < 3) {
+                    formErrors.firstName = "Tối thiểu 3 kí tự"
+                } else { formErrors.firstName = "" }
                 break;
             case "lastName":
                 formErrors.lastName =
@@ -92,10 +114,9 @@ export default class RegisterComponent extends Component {
                 formErrors.password =
                     value.length < 6 ? "Mật khẩu tối thiểu 6 kí tự" : "";
                 break;
-            case "confirmPassword":
-                if (this.state.password != value) {
-                    formErrors.confirmPassword = "Mật khẩu nhập lại chưa đúng!";
-                } else { formErrors.confirmPassword = "" }
+            case "username":
+                formErrors.username =
+                    value.length < 6 ? "Tên đăng nhập tối thiểu 6 kí tự" : "";
                 break;
             case "phoneNumber":
                 formErrors.phoneNumberCheck0 = (value.charAt(0) == "0") ? "" : "Số điện thoại bắt đầu bằng 0.";
@@ -105,19 +126,27 @@ export default class RegisterComponent extends Component {
             default:
                 break;
         }
-
         // this.setState({ formErrors, [name]: value }, () => console.log(this.state));
     };
-    _checkPhoneNum(value, formErrors) {
-
-    }
     _onClickRegister() {
-      
-        this.props.createAccount(this.state.user)
-    }
+        console.log(formValid(this.state))
 
-    _unHiddePassWord() {
-        this.setState({ hidden: !this.state.hidden });
+        if (formValid(this.state)) {
+            let curTime = new Date().toLocaleString()
+            console.log("đayadyayd")
+            // if (this.states.user)
+            //     this.setState({
+            //         ...this.state,
+            //         user: {
+            //             ...this.state.user,
+            //             creat_at: curTime
+            //         }
+            //     })
+            // this.props.createAccount(this.state.user)
+        } else {
+            alert("Điền đầy đủ các trường")
+        }
+        // }
     }
     async _genCapcha() {
 
@@ -145,15 +174,12 @@ export default class RegisterComponent extends Component {
             code: temp
         });
     }
-
-
     render() {
+        let count = 0;
         const { formErrors } = this.state;
-        if (this.props.isRegister) {
-            return <Redirect to='/login'></Redirect>
-        }
-
-
+        // if (this.props.isRegister) {
+        //     return <Redirect to='/login'></Redirect>
+        // }
         return (
             <div className="wrap-page-register">
                 <Header {... this.props} />
@@ -170,6 +196,7 @@ export default class RegisterComponent extends Component {
                                     <div className="firstName">
                                         <label htmlFor="firstName">Tên</label>
                                         <input
+                                            value={this.state.user.firstName}
                                             className={formErrors.firstName.length > 0 ? "error" : null}
                                             placeholder="Điền tên"
                                             type="text"
@@ -183,7 +210,7 @@ export default class RegisterComponent extends Component {
                                     </div>
                                     <div className="lastName">
                                         <label htmlFor="lastName">Họ</label>
-                                        <input
+                                        <input // value={this.state.user.lastName}
                                             className={formErrors.lastName.length > 0 ? "error" : null}
                                             placeholder="Điền họ"
                                             type="text"
@@ -200,7 +227,7 @@ export default class RegisterComponent extends Component {
                                 <Row style={{ margin: "0px" }}>
                                     <div className="email">
                                         <label htmlFor="email">Email</label>
-                                        <input
+                                        <input // value={this.state.user.email}
                                             className={formErrors.email.length > 0 ? "error" : null}
                                             placeholder="Điền địa chỉ Email"
                                             type="email"
@@ -214,9 +241,9 @@ export default class RegisterComponent extends Component {
                                     </div>
                                     <div className="phoneNumber">
                                         <label htmlFor="phoneNumber">Số điện thoại </label>
-                                        <input
-                                            className={formErrors.phoneNumber.length > 0 ? "error" : null}
-                                            placeholder="Số điện thoại"
+                                        <input // value={this.state.user.phoneNumber}
+                                            className={formErrors.phoneNumber ? "error" : null}
+                                            placeholder={"Số điện thoại"}
                                             type="text"
                                             name="phoneNumber"
                                             noValidate
@@ -234,7 +261,7 @@ export default class RegisterComponent extends Component {
                                 </Row>
                                 <div className="address">
                                     <label htmlFor="address">Địa chỉ</label>
-                                    <input
+                                    <input // value={this.state.user.address}
                                         className={formErrors.address.length > 0 ? "error" : null}
                                         placeholder="Địa chỉ"
                                         type="text"
@@ -247,62 +274,90 @@ export default class RegisterComponent extends Component {
                                     )}
                                 </div>
                                 <Row style={{ margin: "0px" }}>
+                                    <div className="username">
+                                        <label htmlFor="username">Tên đăng nhập</label>
+                                        <input // value={this.state.user.username}
+                                            className={formErrors.username.length > 0 ? "error" : null}
+                                            placeholder="Điền lại mật khẩu"
+                                            type="type"
+                                            name="username"
+                                            noValidate
+                                            onChange={this.handleChange}
+                                        />
+                                        {formErrors.username.length > 0 && (
+                                            <span className="errorMessage">{formErrors.username}</span>
+                                        )}
+                                    </div>
+
                                     <div className="password">
                                         <label htmlFor="password">Mật khẩu</label>
-                                        <input
-                                            className={formErrors.password.length > 0 ? "error" : null}
-                                            placeholder="Điền mật khẩu"
-                                            type="password"
-                                            name="password"
-                                            noValidate
-                                            onChange={this.handleChange}
-                                        />
+                                        <div>
+                                            <input // value={this.state.user.password}
+                                                icon={{ name: 'eye', }}
+                                                className={formErrors.password.length > 0 ? "error" : null}
+                                                placeholder="Điền mật khẩu"
+                                                type={this.state.isHidden}
+                                                name="password"
+                                                noValidate
+                                                onChange={this.handleChange}
+                                            >
+                                            </input>
+                                            <Icon
+                                                id="password-unhidden" className="fa fa-eye password-icon"
+                                                onClick={() => {
+                                                    console.log("onclick: " + count)
+                                                    count = count + 1;
+                                                    if (this.state.count % 2 == 0) {
+                                                        this.setState({
+                                                            ...this.state,
+                                                            isHidden: "type"
+                                                        });
+                                                    }
+                                                }}
+                                            />
+                                        </div>
                                         {formErrors.password.length > 0 && (
                                             <span className="errorMessage">{formErrors.password}</span>
                                         )}
                                     </div>
-                                    <div className="confirmPassword">
-                                        <label htmlFor="confirmPassword">Nhập lại mật khẩu</label>
-                                        <input
-                                            className={formErrors.confirmPassword.length > 0 ? "error" : null}
-                                            placeholder="Điền lại mật khẩu"
-                                            type="password"
-                                            name="confirmPassword"
-                                            noValidate
-                                            onChange={this.handleChange}
-                                        />
-                                        {formErrors.password.length > 0 && (
-                                            <span className="errorMessage">{formErrors.password}</span>
-                                        )}
-                                    </div>
+
                                 </Row>
                                 <div>
                                     <label className='label-item'>Mã an toàn
                                         <span>(*)</span>
                                     </label>
-                                    <input className="capcha-input" type='text ' ></input>
+                                    <input className="capcha-input " type='text ' ></input>
                                     <div style={{ width: "100px", display: "inline-block" }}></div>
                                     <label className="generated-capcha"> {this.state.code} </label>
                                 </div>
                                 <div style={{
                                     textAlign: "center",
                                     color: this.state.color,
-                                    display: "none"
+                                    display: this.state.display
                                 }}> {this.state.capcha_valid}</div>
                             </div>
                         </div >
                         <Row className="wrap-action-btn">
                             <Col className="col-lg-3 col-md-3 col-sm-4" id="btn-item"> </Col>
-                            <Col className="col-lg-4 col-md-4col-sm-4" id="btn-item">
+                            <Col className="col-lg-6 col-md-6 col-sm-6" id="btn-item">
 
                                 <Button className="act-btn" onClick={() => {
                                     this._onClickRegister()
-                                }}> Đăng kí</Button>
-                                <Button className="act-btn">Thoát</Button>
+                                }}>
+                                    <Link className="link" exact from="/register" to={this.state.url}>
+                                        Đăng kí
+                                </Link>
+                                </Button>
+                                <Icon style={{
+                                    display: this.state.display,
+
+                                }} className="fa fa-spinner"></Icon>
+
+                                <Button className="act-btn">
+                                    <Link className="link" to={"/"}>Thoát</Link>
+                                </Button>
                             </Col>
-
                             <Col className="col-lg-4 col-md-4col-sm-4 " id="btn-item"> </Col>
-
                         </Row>
                     </section >
                 </div >
@@ -311,4 +366,3 @@ export default class RegisterComponent extends Component {
         )
     }
 }
- 

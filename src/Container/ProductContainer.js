@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import * as action from "../Admin/Action/ProductAction"
 import Products from "../Component/Products/Products"
 
 class ProductContainer extends React.Component {
@@ -20,12 +21,14 @@ class ProductContainer extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        initLoad: () => {
+            dispatch(action._GetListProduct())
+        }
     }
 }
 const mapStateToProps = (store) => {
     return {
-
+        product: store.uni.payload
     }
 }
 

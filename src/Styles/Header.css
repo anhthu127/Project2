@@ -1,6 +1,4 @@
-.home-page{
 
-}
 .top-header{
     background: #ffc000;;
     width: 100%;
@@ -15,9 +13,10 @@
 }
 .wrap-top-header #say-hello{
     width: 950px;
+    padding-left: 30px;
     height: 100%;
-     display: inline-block;
-     float: left;
+    display: inline-block;
+    float: left;
     
  }
 .wrap-top-header #wrap-account{

@@ -5,7 +5,6 @@ import { put, takeEvery } from 'redux-saga/effects';
 function* getAdsProduct( ) {
     try {
         const res   = yield getAds();
-        console.log("res: ",res)
         yield put({
             type: type.get_ads_product_success,
             payload: res

@@ -28,16 +28,16 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         initLoad: () => {
-            dispatch(action._GetListUniProduct())
+            dispatch(action._GetListProduct())
         },
         createUniProduct: (data) => {
-            dispatch(action._CreateUniProduct(data))
+            dispatch(action._CreateProduct(data))
         },
         updateUniProduct: (data) => {
-            dispatch(action._UpdateUniProduct(data))
+            dispatch(action._UpdateProduct(data))
         },
         delUniProduct: (data) => {
-            dispatch(action._DeleteUniProduct(data))
+            dispatch(action._DeleteProduct(data))
         }
 
     }

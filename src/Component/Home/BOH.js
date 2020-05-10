@@ -229,7 +229,7 @@ export default class BOH extends React.Component {
                                             <div className="wrap-img">
                                                 <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -247,7 +247,7 @@ export default class BOH extends React.Component {
                                                 <Image src={require('../../Images/may-no.jpg')} thumbnail></Image>
                                             </div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -262,7 +262,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -280,7 +280,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -295,7 +295,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -311,7 +311,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -340,7 +340,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -356,7 +356,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -372,7 +372,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -390,7 +390,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -406,7 +406,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
@@ -423,7 +423,7 @@ export default class BOH extends React.Component {
                                         <div className="">
                                             <div className="wrap-img">   <Image src={require('../../Images/may-no.jpg')} thumbnail></Image></div>
                                             <div className='infor-product'>
-                                                <h3 className='title'>
+                                                <h3 className='title-in-home'>
                                                     <a> may no</a>
 
                                                 </h3>
