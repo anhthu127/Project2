@@ -44,7 +44,6 @@ export default class ProductManagement extends React.Component {
     // làm list để chọn cho tag sản phẩm
     render() {
         console.log(JSON.stringify(this.props))
-
         let show;
         if (this.props.listUniProduct) {
             show = this.props.listUniProduct.map((item, key) => {

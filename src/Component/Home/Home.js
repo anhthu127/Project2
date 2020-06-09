@@ -33,8 +33,7 @@ export default class Home extends React.Component {
                         width: '100%',
                         height: '500px',
                         padding: "0px 100px",
-                        background: "#eef3f5"
-                    }}>
+                     }}>
                         <News></News>
 
                     </section>

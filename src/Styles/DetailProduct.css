@@ -1,0 +1,118 @@
+.body-detail-page{
+padding: 0px 100px;
+}
+.wrap-row-detail{
+
+}
+.wrap-img-main{}
+.wrap-img-main, 
+.image-main{
+    width: 300px;
+    height: 300px;
+}
+.infor-detail{
+padding-left: 30px;
+}
+
+.title-name{
+    padding-left: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;    font-size: 30px;
+    border-bottom: solid 2px #fcc00f;
+}
+.infor-detail{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: capitalize;
+}
+.suplier{
+    padding-top: 30px;
+}
+.suplier, 
+.wrap-status
+.describe, 
+.wrap-color-type{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: capitalize;
+    font-size: 15px;
+ }
+.suplier, .wrap-price, .describe,
+.wrap-color-type, .wrap-status,
+.quantity, .btn-actions-choose,
+.more-support{
+    padding-bottom: 10px;
+}
+.wrap-price{
+    padding-left: 50px;
+    font-size: 25px;
+}
+.price-detail-product{
+    color: #fcc000
+}
+.suplier-title, .status-title  {
+    margin-right: 15px;
+}
+
+.item-color{
+    border-radius:5px ;
+    width: 75px;
+    height: 30px;
+    border: 1px solid #cfcfcf;
+    margin-left: 5px;
+    background: #ffffff;
+    text-align: center;
+    text-transform: capitalize;
+}
+.item-color:hover{
+    border: 1px solid #fcc000;
+}
+.quantity-title{
+    padding-right: 10px ;
+}
+.button-increase, .button-decrease {
+    background: #ffffff;
+    border: 1px solid  #cfcfcf;
+    width: 30px;
+}
+.button-increase{
+    border-left: 0px;
+
+}
+.button-decrease{
+    border-right: 0px;
+
+}
+.quantity-input{
+border-radius: 0px;
+width: 50px;
+height: 30px;
+}
+.btn-actions-choose{
+    justify-content: center;
+    width: 100%;
+}
+.btn-add-to-cart, .btn-buy-now{
+    background: #fcc000;
+    height: 40px;
+    border: none;
+    margin-right: 30px;   
+}
+.btn-add-to-cart:hover{
+  box-shadow: #2F8DFF;
+  border: 1px solid #2F8DFF;
+
+}
+.btn-buy-now:hover{
+    box-shadow: #2F8DFF;
+  border: 1px solid #2F8DFF;
+}
+.more-support{
+
+}
+.more-support-phone{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    justify-content: center ;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}

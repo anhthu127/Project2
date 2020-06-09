@@ -12,7 +12,7 @@
     padding-inline-start: 70px;
 }
 .wrap-top-header #say-hello{
-    width: 950px;
+    width: 70%;
     padding-left: 30px;
     height: 100%;
     display: inline-block;
@@ -126,6 +126,10 @@ overflow: auto;
 height: 100%;
 margin-right: 20px;
  width: 50px;
+ color: #000000;
+ }
+ .cart i:hover{
+     color: #ffc000;
  }
 .content-cart{
     height: 100%;
@@ -133,10 +137,14 @@ margin-right: 20px;
     width: 130px;
     color: black;
  }
- .content-cart h5{
-    margin:0px;
+ .content-cart a{
+     margin:0px;
+    color: #000000;
 }
-
+.content-cart a:hover{
+    color: #ffc000;
+    text-decoration: none;
+ }
 .bottom-header{
  height: auto;
     display: block;
@@ -151,7 +159,6 @@ height: 60px;
     display: block;
 
 }
-
 .wrap-bottom-header ul{
     float: left;
     line-height: 60px;

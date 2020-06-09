@@ -1,16 +1,47 @@
 import React from 'react'
 import "../../Styles/Header.css"
 import 'font-awesome/css/font-awesome.min.css';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { Alert } from 'react-bootstrap';
 
 export default class Header extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            isLogin: null,
+            url: '#',
+            user: {
+                firstName: null,
+                lastName: null,
+                email: null,
+                username: null,
+                phoneNumber: null,
+                password: null,
+                address: null,
+                type_account: null
+            }
         }
+
     }
+
+    componentDidMount() {
+        this.setState({
+            isLogin: window.sessionStorage.getItem('isLogin')
+        })
+        console.log("hihi; " + this.state.isLogin + ' _ _ ' + window.sessionStorage.getItem('isLogin'))
+
+    }
+    _Logout() {
+        window.sessionStorage.removeItem('user', '');
+        window.sessionStorage.removeItem('pass', '');
+        window.sessionStorage.removeItem('id', '');
+        window.sessionStorage.removeItem('isLogin', 'null');
+       window.location.href='http://localhost:3000/Home'
+    }
+
     render() {
+
+        const user = window.sessionStorage.getItem('user');
         return (
             <div>
                 <section className='top-header'>
@@ -20,11 +51,16 @@ export default class Header extends React.Component {
                                 Chào mừng bạn đến với chợ dụng cụ cơ khí
                             </p>
                         </div>
+
                         <div id='wrap-account'>
-                            <span id="login" > <Link to={"/login"}>Đăng nhập</Link> |</span>
+                            <span id="login" >
+                                {this.state.isLogin ? <Link to={this.state.url} onClick={() => { this._Logout() }}>Đăng  xuất</Link> : <Link to={"/login"}>Đăng nhập</Link>}
+                                  | </span>
                             <span id="regist"  >
-                                <Link to={'/register'}> Đăng kí</Link></span>
-                        </div></div>
+                                {this.state.isLogin ?
+                                    <Link to={'#'}> {user} </Link> : <Link to={'/register'}>Đăng kí</Link>}</span>
+                        </div>
+                    </div>
 
                 </section>
                 <div style={{
@@ -89,12 +125,20 @@ export default class Header extends React.Component {
                                 </li>
                             </ul>
                         </div>
-                        <div className="cart" >
-                            <i className="fa fa-shopping-cart fa-3x"></i>
+                        <div className="cart" onClick={() => {
+
+                        }} >
+                            <Link to={"/cart"}>
+                                <i className="fa fa-shopping-cart fa-3x">
+                                </i></Link>
                             <div className="content-cart ">
-                                <h6>Giỏ hàng</h6>
+                                <h6>
+                                    <Link to={"/cart"} > Giỏ hàng </Link>
+                                </h6>
                                 <span> {this.state.numProducts} sản phẩm</span>
-                            </div></div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
 
@@ -114,12 +158,12 @@ export default class Header extends React.Component {
                             </li>
 
                             <li className="item">
-                                <span href="/Home">
+                                <span >
                                     <Link to={"Home"}>Trang chủ</Link> </span>
 
                             </li>
                             <li className="item"><span href="/products">
-                                <Link to={"products"}>
+                                <Link to={"/products"}>
                                     Sản phẩm
                                     </Link>
                             </span></li>
@@ -139,7 +183,7 @@ export default class Header extends React.Component {
                         </form>
                     </div>
                 </section>
-            </div>
+            </div >
         )
     }
 }

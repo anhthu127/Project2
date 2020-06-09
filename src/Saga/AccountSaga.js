@@ -6,15 +6,19 @@ import { put, takeEvery } from 'redux-saga/effects';
 function* createAccount(action) {
     try {
         const res = yield addAccount(action.payload);
+        console.log("res: "+JSON.stringify(res))
         yield put({
             type: type.add_new_account_success,
-            payload: res
+            payload: {
+                res,
+              }
+
         });
     } catch (error) {
         yield put({
             type: type.add_new_account_failure,
             payload: {
-                errorMessage: error.message
+                errorMessage: error.message,
             }
         });
     }

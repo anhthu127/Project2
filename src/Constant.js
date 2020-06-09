@@ -64,3 +64,6 @@ export const create_uni_product_failure = "create_uni_product_failure"
 
 //domain url 
 export const domain = `http://localhost:3001`
+
+//currency unit
+

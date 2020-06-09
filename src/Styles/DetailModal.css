@@ -1,0 +1,12 @@
+.btn-xemnhanh{
+    border: 1px solid #ffc107;
+    padding-left: 20px;
+    border-radius: 5px;
+    width: 125px;
+    color: #ffffff;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background: #ffc000;
+}
+ .btn-xemnhanh span{
+     border-bottom: 1px solid #007bff;
+ }

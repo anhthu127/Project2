@@ -98,8 +98,10 @@ input {
      border-right-width:1px;
  }
  .generated-capcha{
+   /* display: inline; */
     text-align: center;
      width: 100px;
+     height: 30px;
      background: #CDCDCD;
      border: 2px solid rgb(122, 115, 115);
  }

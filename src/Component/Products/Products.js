@@ -71,7 +71,6 @@ export default class Products extends React.Component {
                     break;
             }
         }
-        console.log("state: " + JSON.stringify(this.state))
 
         return (
             <div className='products-page' >

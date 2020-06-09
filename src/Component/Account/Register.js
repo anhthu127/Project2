@@ -3,7 +3,7 @@ import { Redirect, Link } from 'react-router-dom'
 import Header from '../Component/Header';
 import '../../Styles/Register.css'
 import FooterOfHome from '../Component/FooterOfHome';
-import { Row, Button, Col } from 'react-bootstrap';
+import { Row, Button, Col, Alert } from 'react-bootstrap';
 import { input, Icon } from 'semantic-ui-react';
 var lettersRegex = RegExp(/^[0-9a-zA-Z]+$/);
 var phoneRegex = RegExp(/^[0-9]+$/);
@@ -11,22 +11,6 @@ const emailRegex = RegExp(
     /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 
-const formValid = ({ formErrors, user }) => {
-    let invalid = false;
-
-    Object.values(formErrors).forEach(val => {
-        console.log("formError : " + JSON.stringify(formErrors))
-
-        val.length > 0 && (invalid = false);
-    });
-
-    Object.values(user).forEach(val => {
-        console.log("rét : " + JSON.stringify(user))
-        val != null || (invalid = false);
-        console.log(val != null)
-    });
-    return invalid;
-};
 export default class RegisterComponent extends Component {
     constructor(props) {
         super(props);
@@ -40,7 +24,6 @@ export default class RegisterComponent extends Component {
                 password: null,
                 confirmPassword: null,
                 address: null,
-
                 type_account: null,
                 recipt_id: null,
                 cart_id: null,
@@ -52,15 +35,18 @@ export default class RegisterComponent extends Component {
                 times_of_order: null,
             },
             url: "#",
-            code: "",
             isFlag: false,
+            isLoading: false,
             isHidden: "password",
             display: "none",
-            capcha_valid: "valid capcha",
+            capcha_invalid: " Mã capcha chưa đúng",
             border: "null",
             color: "#000",
             count: 0,
             onChange: 0,
+            validateForm: false,
+            capcha_code: "",
+            genera_code: "",
             formErrors: {
                 firstName: "",
                 lastName: "",
@@ -74,23 +60,20 @@ export default class RegisterComponent extends Component {
                 address: "",
 
             },
-
-
         }
     }
     componentDidMount() {
-
+        console.log("this: " + JSON.stringify(this.props))
         this._genCapcha();
-
     }
     handleChange = e => {
-        console.log("state: " + JSON.stringify(this.state.user))
         e.preventDefault();
 
         const { name, value } = e.target;
         this.setState({
             ...this.state,
             user: {
+                ...this.state.user,
                 [name]: value,
             }
         })
@@ -126,27 +109,39 @@ export default class RegisterComponent extends Component {
             default:
                 break;
         }
-        // this.setState({ formErrors, [name]: value }, () => console.log(this.state));
     };
-    _onClickRegister() {
-        console.log(formValid(this.state))
 
-        if (formValid(this.state)) {
-            let curTime = new Date().toLocaleString()
-            console.log("đayadyayd")
-            // if (this.states.user)
-            //     this.setState({
-            //         ...this.state,
-            //         user: {
-            //             ...this.state.user,
-            //             creat_at: curTime
-            //         }
-            //     })
-            // this.props.createAccount(this.state.user)
+    _validateForm(user, formError) {
+        // console.log()
+        return (user.firstName && user.lastName && user.email && user.phoneNumber && user.address &&
+            user.password && user.username && this.state.genera_code && formError.firstName.length == 0 && formError.lastName.length == 0
+            && formError.email.length == 0 && formError.phoneNumber.length == 0 && formError.address.length == 0 && formError.username.length
+            == 0 && formError.password == 0 && this.state.display != "block"
+        ) ? true : false
+    }
+    async   _onClickRegister() {
+        if (this._validateForm(this.state.user, this.state.formErrors)) {
+            if (this._checkCapcha()) {
+                await this.setState({
+                    ...this.state,
+                    isLoading: true
+                })
+                this.props.createAccount(this.state.user)
+                this.setState({
+                    ...this.state,
+                    isLoading: this.props.isLoading
+                })
+                await this.props.refreshStore()
+                  window.location.href = `http://localhost:3000/login`
+
+            }
         } else {
             alert("Điền đầy đủ các trường")
         }
-        // }
+
+        if (this.props.isLogin == true) {
+            console.log("2")
+        }
     }
     async _genCapcha() {
 
@@ -171,15 +166,34 @@ export default class RegisterComponent extends Component {
         }
         let temp = captcha.join("")
         await this.setState({
-            code: temp
-        });
+            ...this.setState,
+            genera_code: temp
+        })
+        // console.log(JSON.stringify("1111111" + this.state.capcha_code))
+        // console.log(JSON.stringify(this.state.genera_code))
+
+    }
+    async _checkCapcha() {
+        let valid = false;
+        if (this.state.capcha_code == this.state.genera_code) {
+            await this.setState({
+                ...this.state,
+                capcha_invalid: "",
+            });
+            valid = true;
+            return valid
+        } else {
+            await this.setState({
+                ...this.state,
+                display: "block",
+            });
+            return valid
+        }
     }
     render() {
         let count = 0;
         const { formErrors } = this.state;
-        // if (this.props.isRegister) {
-        //     return <Redirect to='/login'></Redirect>
-        // }
+
         return (
             <div className="wrap-page-register">
                 <Header {... this.props} />
@@ -322,37 +336,43 @@ export default class RegisterComponent extends Component {
                                     </div>
 
                                 </Row>
-                                <div>
+                                <div style={{ display: "block" }}>
                                     <label className='label-item'>Mã an toàn
                                         <span>(*)</span>
                                     </label>
-                                    <input className="capcha-input " type='text ' ></input>
-                                    <div style={{ width: "100px", display: "inline-block" }}></div>
-                                    <label className="generated-capcha"> {this.state.code} </label>
+                                    <input className="capcha-input " type='text ' value={this.state.capcha_code}
+                                        onChange={e => {
+                                            this.setState({
+                                                ...this.state,
+                                                capcha_code: e.target.value
+                                            })
+                                        }} ></input>
+                                    <div style={{ width: "100px", height: "30px", display: "inline-block" }}>
+                                    </div>
+                                    <label className="generated-capcha"> {this.state.genera_code} </label>
                                 </div>
                                 <div style={{
                                     textAlign: "center",
                                     color: this.state.color,
                                     display: this.state.display
-                                }}> {this.state.capcha_valid}</div>
+                                }}> {this.state.capcha_invalid}
+                                </div>
                             </div>
                         </div >
                         <Row className="wrap-action-btn">
                             <Col className="col-lg-3 col-md-3 col-sm-4" id="btn-item"> </Col>
                             <Col className="col-lg-6 col-md-6 col-sm-6" id="btn-item">
 
-                                <Button className="act-btn" onClick={() => {
-                                    this._onClickRegister()
+                                <Button className="act-btn" disabled={this.state.isLoading} onClick={() => {
+                                    this._onClickRegister(this.state.formErrors)
                                 }}>
-                                    <Link className="link" exact from="/register" to={this.state.url}>
-                                        Đăng kí
-                                </Link>
+                                    {this.state.isLoading && <i style={{ paddingRight: '5px' }} className="fa fa-refresh fa-spin" > </i>}
+                                         Đăng kí
+
+                                    {!this.state.isLoading && <Link className="link" exact from="/register" to={this.state.url} >
+
+                                    </Link>}
                                 </Button>
-                                <Icon style={{
-                                    display: this.state.display,
-
-                                }} className="fa fa-spinner"></Icon>
-
                                 <Button className="act-btn">
                                     <Link className="link" to={"/"}>Thoát</Link>
                                 </Button>

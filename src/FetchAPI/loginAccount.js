@@ -2,7 +2,7 @@ import { domain } from '../Constant'
 
 export default function loginAccount(data) {
     return new Promise((resolve, reject) => {
-        const url = domain + `/account?user_name=${data.username}&password=${data.password}`
+        const url = domain + `/account?username=${data.username}&password=${data.password}`
         console.log("url : " + url)
         fetch(url, {
             method: 'GET'

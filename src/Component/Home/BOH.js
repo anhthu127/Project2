@@ -51,6 +51,10 @@ export default class BOH extends React.Component {
 
             ]
         }
+        // const user = window.sessionStorage.getItem('user');
+        // if (!user) {
+        //     window.location.href = "http://localhost:3000/Login";
+        // }
     }
 
 
@@ -139,7 +143,8 @@ export default class BOH extends React.Component {
                                 </div>
                                 <div id='item-slick'>
                                     <img src={require('../../Images/may-khoan-dien-khong-day.jpg')}></img>
-                                    <div className="icon"><a href="#"> <i className='fa fa-search'></i> </a></div>
+                                    <div className="icon"><a href="#"> <i className='fa fa-search'>
+                                    </i> </a></div>
                                     <div className='name-box'>
                                         <h3 className='name'>
                                             <a>Lux Anh Sang</a>
