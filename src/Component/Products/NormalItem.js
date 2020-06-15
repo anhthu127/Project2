@@ -13,6 +13,9 @@ export default class NormalItem extends React.Component {
             onHover: "",
         }
     }
+    componentDidMount() {
+        console.log("componenetDidmount: " + (this.props))
+    }
     detailProduct(item) {
         return (
             <div className="modal fade" id={item.id} role="dialog">

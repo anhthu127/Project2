@@ -2,9 +2,9 @@ import * as type from "../Constant";
 import getAds from "../FetchAPI/getAdsProduct"
 import { put, takeEvery } from 'redux-saga/effects';
 
-function* getAdsProduct( ) {
+function* getAdsProduct(action) {
     try {
-        const res   = yield getAds();
+        const res = yield getAds();
         yield put({
             type: type.get_ads_product_success,
             payload: res

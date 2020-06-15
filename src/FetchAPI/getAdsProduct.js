@@ -4,7 +4,7 @@ export default function getAds() {
     //     type: data.type.trim()
     // }
     return new Promise((resolve, reject) => {
-        const url = domain + '/product'
+        const url = domain + '/product';
         fetch(url, {
             method: "GET",
             headers: { "Content-type": "application/json" },

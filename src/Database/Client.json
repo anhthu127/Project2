@@ -18,7 +18,6 @@
       "divice": "",
       "times_of_order": ""
     },
-   
     {
       "firstName": "FSFDS",
       "lastName": "XZVXF",
@@ -38,6 +37,26 @@
       "divice": null,
       "times_of_order": null,
       "id": "-8HmdCU"
+    },
+    {
+      "firstName": "nguyen duc",
+      "lastName": "thu",
+      "email": "dgsg2@43",
+      "username": "thutuntitngusi",
+      "phoneNumber": "0966677271",
+      "password": "anhthu@127",
+      "confirmPassword": null,
+      "address": "asdasd",
+      "type_account": null,
+      "recipt_id": null,
+      "cart_id": null,
+      "creat_at": null,
+      "last_login": null,
+      "last_failed_login": null,
+      "ip": null,
+      "divice": null,
+      "times_of_order": null,
+      "id": "eIGUM_y"
     }
   ],
   "staff": [
@@ -212,7 +231,7 @@
       }
     },
     {
-      "id": "4",
+      "id": "5",
       "product_name": "máy nổ",
       "product_id": "p001",
       "price": "250000",
@@ -233,6 +252,90 @@
       "discount": "",
       "discount_price": "",
       "ori_price": "",
+      "sub_url": {
+        "url-1": "may-khoan-dien-khong-day.jpg",
+        "url-2": "may-mai-goc-dewalt.jpg"
+      }
+    },
+    {
+      "id": "6",
+      "product_name": "máy nổ",
+      "product_id": "p001",
+      "price": "250000",
+      "type": "03",
+      "description": "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?",
+      "review": {
+        "review": "",
+        "user_id": ""
+      },
+      "suplier": " Based in Saigon",
+      "status": "",
+      "color": "",
+      "quantity": "5",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": "",
+      "url": "may-no.jpg",
+      "cluster": {
+        "color": "vàng, đen, trắng",
+        "quantity": "5, 3, 2"
+      },
+      "sub_url": {
+        "url-1": "may-khoan-dien-khong-day.jpg",
+        "url-2": "may-mai-goc-dewalt.jpg"
+      }
+    },
+    {
+      "id": "7",
+      "product_name": "máy nổ",
+      "product_id": "p001",
+      "price": "250000",
+      "type": "03",
+      "description": "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?",
+      "review": {
+        "review": "",
+        "user_id": ""
+      },
+      "suplier": " Based in Saigon",
+      "status": "",
+      "color": "",
+      "quantity": "5",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": "",
+      "url": "may-no.jpg",
+      "cluster": {
+        "color": "vàng, đen, trắng",
+        "quantity": "5, 3, 2"
+      },
+      "sub_url": {
+        "url-1": "may-khoan-dien-khong-day.jpg",
+        "url-2": "may-mai-goc-dewalt.jpg"
+      }
+    },
+    {
+      "id": "8",
+      "product_name": "máy nổ",
+      "product_id": "p001",
+      "price": "250000",
+      "type": "03",
+      "description": "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a galley of type and scrambled it to make a type specimen book it has?",
+      "review": {
+        "review": "",
+        "user_id": ""
+      },
+      "suplier": " Based in Saigon",
+      "status": "",
+      "color": "",
+      "quantity": "5",
+      "discount": "",
+      "discount_price": "",
+      "ori_price": "",
+      "url": "may-no.jpg",
+      "cluster": {
+        "color": "vàng, đen, trắng",
+        "quantity": "5, 3, 2"
+      },
       "sub_url": {
         "url-1": "may-khoan-dien-khong-day.jpg",
         "url-2": "may-mai-goc-dewalt.jpg"

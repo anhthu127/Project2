@@ -26,7 +26,7 @@ class HomeContainer extends React.Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         getAdsProduct: () => {
-            dispatch(action.getAdsProducts)
+            dispatch(action.getAdsProducts())
         }
     }
 }

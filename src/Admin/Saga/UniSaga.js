@@ -4,9 +4,9 @@ import AddUni from "../FetchAPI/Product/AddUniProduct"
 import GetUni from '../FetchAPI/Product/GetUniProduct'
 import UpdateUni from '../FetchAPI/Product/UpdateUniProduct'
 import DeleteUni from '../FetchAPI/Product/DelUniProduct'
-function* getUniProduct(action) {
+function* getUniProduct( ) {
     try {
-         const responseData = yield GetUni(action.payload);
+         const responseData = yield GetUni();
          yield put({
             type: type.get_uni_product_success,
             payload: responseData,

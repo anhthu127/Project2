@@ -1,7 +1,7 @@
 import * as types from "../Constant"
-export function getAdsProducts( ) {
-    return ({
-        type: types.get_ads_product_request,
-      });
-    }
- 
+export function getAdsProducts(payload) {
+  return ({
+    type: types.get_ads_product_request,
+    payload
+  });
+}
