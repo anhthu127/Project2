@@ -28,7 +28,7 @@ export default class Header extends React.Component {
         this.setState({
             isLogin: window.sessionStorage.getItem('isLogin')
         })
-        console.log("hihi; " + this.state.isLogin + ' _ _ ' + window.sessionStorage.getItem('isLogin'))
+        // console.log("hihi; " + this.state.isLogin + ' _ _ ' + window.sessionStorage.getItem('isLogin'))
 
     }
     _Logout() {

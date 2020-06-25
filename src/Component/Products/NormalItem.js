@@ -14,7 +14,7 @@ export default class NormalItem extends React.Component {
         }
     }
     componentDidMount() {
-        console.log("componenetDidmount: " + (this.props))
+        console.log("componenetDidmount: " + JSON.stringify(this.props))
     }
     detailProduct(item) {
         return (
@@ -39,8 +39,8 @@ export default class NormalItem extends React.Component {
     render() {
         let show;
         const baseImage = "../../Images/"
-        if (this.props.product) {
-            show = this.props.product.map((item, key) => {
+        if (this.props.data) {
+            show = this.props.data.map((item, key) => {
                 let detail = "detail" + key;
                 const sending = {
                     pathname: 'detail/' + item.product_name.replace(" ", "-"),

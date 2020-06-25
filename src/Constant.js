@@ -62,6 +62,14 @@ export const edit_uni_product_failure = "edit_uni_product_failure"
 export const delete_uni_product_failure = "delete_uni_product_failure"
 export const create_uni_product_failure = "create_uni_product_failure"
 
+//addtocart 
+export const add_to_cart_request = 'add_to_cart_request'
+export const add_to_cart_success = 'add_to_cart_success'
+export const add_to_cart_failure = 'add_to_cart_failure'
+export const get_cart_request = 'get_cart_request'
+export const get_cart_success = 'get_cart_success'
+export const get_cart_failure = 'get_cart_failure'
+
 //domain url 
 export const domain = `http://localhost:3001`
 

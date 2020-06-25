@@ -1,6 +1,7 @@
 import { all } from 'redux-saga/effects';
 import { adsSaga } from './Home'
 import { CusAccountSaga } from "./AccountSaga"
+import {cartSaga} from "./CartSaga"
 
 import { UniSaga } from "../Admin/Saga/UniSaga"
 import { CustomerSaga } from "../Admin/Saga/CustomerAccount"
@@ -10,7 +11,7 @@ function* rootSaga() {
     yield all([
         ...CusAccountSaga,
         ...adsSaga,
-
+        ...cartSaga,
         ...UniSaga,
         ...CustomerSaga,
         ...HomeAdminSaga,

@@ -5,6 +5,8 @@ import '../../Styles/Register.css'
 import FooterOfHome from '../Component/FooterOfHome';
 import { Row, Button, Col, Alert } from 'react-bootstrap';
 import { input, Icon } from 'semantic-ui-react';
+import { domain } from '../../Constant'
+ 
 var lettersRegex = RegExp(/^[0-9a-zA-Z]+$/);
 var phoneRegex = RegExp(/^[0-9]+$/);
 const emailRegex = RegExp(
@@ -34,6 +36,21 @@ export default class RegisterComponent extends Component {
                 divice: null,
                 times_of_order: null,
             },
+            cart: {
+
+                user_id: "",
+                product: [
+                    {
+                        product_id: "",
+                        product_name: "",
+                        price: "",
+                        color: "",
+                        quantity: "",
+                    }
+                ],
+                total_money: ""
+            },
+
             url: "#",
             isFlag: false,
             isLoading: false,
@@ -119,20 +136,42 @@ export default class RegisterComponent extends Component {
             == 0 && formError.password == 0 && this.state.display != "block"
         ) ? true : false
     }
-    async   _onClickRegister() {
+    // CreateCart(data) {
+    //     console.log("fetchCart:  " + JSON.stringify(data))
+    //     return new Promise((resolve, reject) => {
+    //         const url = domain + '/cart'
+    //         fetch(url, {
+    //             method: 'POST',
+    //             headers: { "Content-type": "application/json" },
+    //             body: JSON.stringify(data)
+    //         })
+    //             .then((response) => response.json())
+    //             .then((res) => {
+    //                 resolve(res);
+    //             })
+    //             .catch((error) => {
+    //                 reject(error);
+    //             });
+    //     });
+    // }
+
+    async _onClickRegister() {
         if (this._validateForm(this.state.user, this.state.formErrors)) {
             if (this._checkCapcha()) {
-                await this.setState({
+              await  this.setState({
                     ...this.state,
                     isLoading: true
                 })
-                this.props.createAccount(this.state.user)
-                this.setState({
+                await this.props.createAccount(this.state.user)
+                console.log("props: " + JSON.stringify(this.props))
+                await this.setState({
                     ...this.state,
                     isLoading: this.props.isLoading
                 })
-                await this.props.refreshStore()
-                  window.location.href = `http://localhost:3000/login`
+                // console.log("data:  " + JSON.stringify(this.props.data))                             
+                // await this.props.refreshStore()
+                // window.location.href = `http://localhost:3000/login`
+                // throw new Error("sai roi sai roi!");
 
             }
         } else {
@@ -143,6 +182,7 @@ export default class RegisterComponent extends Component {
             console.log("2")
         }
     }
+
     async _genCapcha() {
 
         var charsArray = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!#$%^&*";
@@ -173,20 +213,24 @@ export default class RegisterComponent extends Component {
         // console.log(JSON.stringify(this.state.genera_code))
 
     }
-    async _checkCapcha() {
+    _checkCapcha() {
         let valid = false;
+        console.log("capcha: " + this.state.capcha_code + "    " + this.state.genera_code)
         if (this.state.capcha_code == this.state.genera_code) {
-            await this.setState({
-                ...this.state,
+            console.log("if")
+            this.setState({
+                ... this.state,
                 capcha_invalid: "",
             });
             valid = true;
             return valid
         } else {
-            await this.setState({
-                ...this.state,
+            this.setState({
+                ... this.state,
                 display: "block",
             });
+            console.log("else " + this.state.display)
+
             return valid
         }
     }
@@ -346,6 +390,8 @@ export default class RegisterComponent extends Component {
                                                 ...this.state,
                                                 capcha_code: e.target.value
                                             })
+                                            console.log('onchange: ' + e.target.value + '   ' + this.state.capcha_code)
+
                                         }} ></input>
                                     <div style={{ width: "100px", height: "30px", display: "inline-block" }}>
                                     </div>

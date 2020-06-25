@@ -20,5 +20,5 @@ function* getAdsProduct(action) {
 }
 
 export const adsSaga = [
-    takeEvery(type.get_ads_product_success, getAdsProduct)
+    takeEvery(type.get_ads_product_request, getAdsProduct)
 ];

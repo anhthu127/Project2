@@ -17,9 +17,10 @@ export default (state = DEFAULT_STATE, action) => {
                 ...state,
             };
         case type.add_new_account_success:
+            console.log("reducer: "+JSON.stringify(action.payload.res ))
             return {
                 ...state,
-                res: action.payload,
+                res: action.payload.res,
                 isLoading: false,
                 isLogin: true,
 

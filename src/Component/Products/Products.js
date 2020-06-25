@@ -9,8 +9,7 @@ import CoKhi from './CoKhi'
 import NormalItem from './NormalItem'
 import Item from './saleItem'
 import DungPin from './DungPin'
-import { values } from 'json-server-auth'
-
+import {domain} from '../../Constant'
 
 export default class Products extends React.Component {
     constructor(props) {
@@ -26,22 +25,43 @@ export default class Products extends React.Component {
             background: 'none',
             active: 0,
             pager: '',
+            isPress: 0,
             totalPage: '',
             data: [],
             items: [],
         }
+
     }
 
     componentDidMount() {
         this.props.initLoad()
 
     }
+    async _clickPage(items, value) {
+        console.log("active befefore : " + (value - 1))
+        await this.setState({
+            ... this.state,
+            active: value - 1
+        })
+        console.log("active: " + this.state.active)
+        let data = []
+        console.log("active page: " + this.state.active)
+        for (let i = (this.state.active * 6); i <= (this.state.active + 5); i++) {
+            data.push(items[i])
+        }
+        this.setState({
+            ... this.state,
+            data: data
+        })
+        console.log("data: " + JSON.stringify(this.state.data))
 
+    }
     _mainProduct() {
+        // this._clickPage();
         return (
             <div>
                 <div style={{ display: this.state.displayitem }}>
-                    <NormalItem {... this.props}
+                    <NormalItem data={this.state.data}
                     />
                 </div>
                 <div style={{ display: this.state.display }}>
@@ -50,27 +70,38 @@ export default class Products extends React.Component {
             </div>
         )
     }
+   
     render() {
+        let items = [];
+        if (this.props.product) {
+            this.props.product.forEach(element => {
+                items.push(element);
+            });
+        }
+        let data = []
+        // if (this.state.isPress == 0) {
+        //     for (let i = (this.state.active * 6); i <= (this.state.active + 5); i++) {
+        //         data.push(items[i])
+        //     }
+        //     this.setState({
+        //         ... this.state,
+        //         data: data
+        //     })
+        // }
         let content;
         let url = window.location.href;
-        let items = [];
-        // if (this.props.product) {
-        //     this.props.product.forEach(element => {
-        //         items.push(element);
-        //     });
-        // }
-        // let totalPage = parseInt(8 / 6) + 1;
-        // let page = []
-        // for (let i = 1; i <= totalPage; i++) {
-        //     page.push(i);
-        // }
-        // console.log("page: " + page.length)
-        // if (this.props.product) {
-        //     this.props.product.forEach(element => {
-        //         items.push(element);
-        //     });
-        // }
-        console.log("hihi: " + items.length)
+        let totalPage = parseInt(8 / 6) + 1;
+
+        let page = []
+        for (let i = 1; i <= totalPage; i++) {
+            page.push(i);
+        }
+        console.log("page: " + page)
+        if (this.props.product) {
+            this.props.product.forEach(element => {
+                items.push(element);
+            });
+        }
         if (this.props.product) {
             switch (url) {
                 case "http://localhost:3000/products":
@@ -137,24 +168,29 @@ export default class Products extends React.Component {
                             <div style={{ width: '100%', height: '50px' }}></div>
                             <div className="wrap-pagination">
                                 <ul
-                                    className="paginate">
-                                    {/* <li className='item'>
-                                        <a className='page-link'> «</a>
+                                    className="pagination">
+
+                                    <li className='item-page'>
+                                        <button className='page-link'> «</button>
                                     </li>
                                     {
                                         page.map((value, key) => {
                                             return (
-                                                <li className='item' key={key}   >
-                                                    <a className='page-link'>
+                                                <li className='item-page' key={key}
+                                                    onClick={() => {
+
+                                                        this._clickPage(items, value)
+                                                    }}  >
+                                                    <button className='page-link'>
                                                         {value}
-                                                    </a>
+                                                    </button>
                                                 </li>
                                             )
                                         })
                                     }
-                                    <li className='item'>
-                                        <a className='page-link'> »</a>
-                                    </li> */}
+                                    <li className='item-page'>
+                                        <button className='page-link'> »</button>
+                                    </li>
                                 </ul>
 
                             </div>

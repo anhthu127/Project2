@@ -14,7 +14,7 @@ import NewProducts from "./Component/NewProduct/NewProduct"
 import HotNews from "./Component/HotNews/HotNews"
 import AdminLogin from "./Admin/Container/Login"
 import Test from "./Test"
-import Cart from "./Component/Cart/Cart"
+import Cart from "./Container/CartContainer"
 import DetailProduct from "./Component/Products/DetailProduct"
 export {
     HomeContainer,
