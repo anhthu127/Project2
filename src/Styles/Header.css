@@ -159,9 +159,9 @@ height: 60px;
     display: block;
 
 }
-.wrap-bottom-header ul{
+.wrap-bottom-header .header-ul{
     float: left;
-    line-height: 60px;
+    line-height: 55px;
     text-align: center;
     display: inline-block;
     list-style-type: none;
@@ -199,8 +199,8 @@ height: 60px;
   .wrap-bottom-header .item span:hover{
      padding-bottom: 1px;
      background: #f1bb2b;
-     border-bottom: 1px #fff solid;
- }
+     height: 60px;
+  }
   .wrap-bottom-header #category{
     height: 100%;
     display: inline-block;

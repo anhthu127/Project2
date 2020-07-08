@@ -1,0 +1,242 @@
+.wrap-content-checkout{
+    width: 100%;
+    height: auto;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    padding-left: 100px;
+    padding-right: 50px;
+    padding-top: 50px;
+    display: block;
+}
+.table-row{
+
+}
+.title-col-1{
+    width: 350px;
+    height: 50px;
+    font-weight: 700;
+    padding: 0px 0px 30px 50px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: center;
+}
+.wrap-item{
+    width: 350px;
+    height: 65px;
+}
+.wrap-item input{
+    width: 350px;
+}
+.payment-header{
+    font-size:  20px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    height: 50px;
+    width: 300px;
+    padding: 0px 0px 30px 50px;
+}
+.payment-header h5{
+   
+}
+.wrap-delevery{
+ 
+}
+.wrap-content-delevery{
+    height: 50px;
+    border: 1px solid #cfcfcf;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.money-delevery{
+    width: 70px;
+    font-size: 15px;
+}
+.payment-content{
+    height: 100px;
+    border: 1px solid #cfcfcf;
+}
+.choosen-radio{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.radio-input{
+    height: 25px;
+     width: 30px ;
+ }
+.radio-title{
+    height: 25px;
+    width: 250px;
+    margin: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-right: 0px;
+ }
+.choosen-radio i{
+    height: 25px;
+    margin: 5px;
+    margin-left: 0px;
+ }
+.blank-slate{
+    background: #eee9e9;
+    height: 50px;
+    padding: 10px 30px 10px 30px;
+
+}
+.blank-slate h5{
+    font-size:  17px;
+font-family: 'Times New Roman', Times, serif
+}
+.side-bar{
+    padding-left: 0px;
+    padding-right: 0px;
+    border-top: 1px solid #cfcfcf;
+    border-left: 1px solid #cfcfcf;
+    background: rgba(119, 117, 117, 0.16);
+    
+}
+.title-side-bar{
+    width: 100%;
+    padding-left: 30px;
+    padding-top: 10px;
+    height: 50px;
+    font-size: 18px;
+     font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    border-bottom: 1px solid #cfcfcf;
+}
+.wrap-order-summary{
+height: 300px;
+padding-left: 20px;
+  overflow: auto;
+ 
+}
+.list-item{
+ }
+.item .row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.item{
+    height: 70px;
+   
+    padding-bottom: 5px;
+}
+.wrap-image-summary{
+    width: 20%;
+    height: 70px;
+    padding-left: 0px;
+    display: flex;
+}
+
+.product-thumbnail-img{
+    border: 1px solid #cfcfcf;
+    width: 80%;
+    z-index: 1;
+     height: 50px;
+}
+.wrap-product-quantity{
+    z-index: 2;
+    border-radius: 30%;
+    opacity: 1;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    margin-left: 40px;
+    margin-top: -5px;
+    font-size: 10px;
+    background: rgb(17, 138, 178);
+}
+.product-quantity{
+    font-size: 10px;
+    z-index: 3;
+    position: absolute;
+    padding-left: 5px;
+ }
+.wrap-name-summary{
+    width: 40%;
+    height: 70px;
+    text-transform: capitalize;
+    padding-left: 5px;
+}
+.wrap-name-summary  .name, .color{
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.color{
+    color: #21252940;
+}
+.wrap-price-summary{
+    width: 20%;
+}
+.price{
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.wrap-total-receipt{
+    width: 100%;
+    padding-left: 0px;
+    height: 100px; 
+    border-bottom: 1px solid #cfcfcf;
+    padding: 20px 30px 0px 0px;
+ }
+.wrap-price{
+    padding-left: 0px;
+    width: 90%;
+    font-size: 13px;   
+    font-family: 'Times New Roman', Times, serif;
+    border-top: 1px solid #cfcfcf;
+
+    }
+.wrap-sub-total{
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif; 
+    display: flex;
+}
+.total{
+    width: 100px;
+   
+}
+.total-price{
+  
+}
+.wrap-shipping{
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+}
+.shipping{
+    width: 100px;
+}
+.wrap-total-receipt{
+    
+    padding-left: 50px;
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+.title-receipt{
+    
+}
+
+.btn-btn-action{
+    font-size: 13px;
+    font-family: 'Times New Roman', Times, serif;
+   border-bottom: 1px solid #cfcfcf;
+}
+  .btn-2 {
+    border: none;
+    background: rgb(17, 138, 178);
+    height: 30px;
+    color: white;
+    border-radius: 5%;
+    width: 150px;
+}
+.link-1{
+    width: 100px;
+    height: 30px;
+    color: #2486ae;
+}

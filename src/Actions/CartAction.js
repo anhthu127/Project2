@@ -6,3 +6,11 @@ export function GetCart(payload) {
         payload
     })
 }
+
+
+export function UpdateCart(payload) {
+    return ({
+        type: types.update_cart_request,
+        payload
+    })
+}

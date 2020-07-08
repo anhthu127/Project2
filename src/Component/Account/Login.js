@@ -28,6 +28,8 @@ export default class Login extends React.Component {
         if (response[0]) {
             window.sessionStorage.setItem('user', response[0].username)
             window.sessionStorage.setItem('pass', response[0].password)
+            window.sessionStorage.setItem('email', response[0].email)
+            window.sessionStorage.setItem('phone', response[0].phoneNumber)
             window.sessionStorage.setItem('id', response[0].id)
             window.sessionStorage.setItem('isLogin', true)
             window.location.href = `http://localhost:3000/Home/` + this.state.account.username

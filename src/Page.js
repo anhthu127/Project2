@@ -15,7 +15,9 @@ import HotNews from "./Component/HotNews/HotNews"
 import AdminLogin from "./Admin/Container/Login"
 import Test from "./Test"
 import Cart from "./Container/CartContainer"
-import DetailProduct from "./Component/Products/DetailProduct"
+import ReceiptUser from "./Component/Receipt"
+import Checkout from "./Container/CheckOutContainer"
+import DetailProduct from "./Container/DetailProduct"
 export {
     HomeContainer,
     Login,
@@ -25,6 +27,8 @@ export {
     NewProducts,
     HotNews,
     Cart,
+    ReceiptUser,
+    Checkout,
     DetailProduct,
 
     AdminLogin,

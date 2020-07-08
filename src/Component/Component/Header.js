@@ -36,7 +36,7 @@ export default class Header extends React.Component {
         window.sessionStorage.removeItem('pass', '');
         window.sessionStorage.removeItem('id', '');
         window.sessionStorage.removeItem('isLogin', 'null');
-       window.location.href='http://localhost:3000/Home'
+        window.location.href = 'http://localhost:3000/Home'
     }
 
     render() {
@@ -144,7 +144,7 @@ export default class Header extends React.Component {
 
                 <section className="bottom-header">
                     <div className="wrap-bottom-header">
-                        <ul >
+                        <ul className='header-ul' >
                             <li className="item" id='category'>
                                 <span href="default.asp">
                                     <i className='fa fa-bars' id="sub-menu"> </i>

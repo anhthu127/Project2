@@ -69,7 +69,9 @@ export const add_to_cart_failure = 'add_to_cart_failure'
 export const get_cart_request = 'get_cart_request'
 export const get_cart_success = 'get_cart_success'
 export const get_cart_failure = 'get_cart_failure'
-
+export const update_cart_request = 'update_cart_request'
+export const update_cart_success = 'update_cart_success'
+export const update_cart_failure = 'update_cart_failure'
 //domain url 
 export const domain = `http://localhost:3001`
 

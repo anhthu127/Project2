@@ -9,7 +9,7 @@ import CoKhi from './CoKhi'
 import NormalItem from './NormalItem'
 import Item from './saleItem'
 import DungPin from './DungPin'
-import {domain} from '../../Constant'
+import { domain } from '../../Constant'
 
 export default class Products extends React.Component {
     constructor(props) {
@@ -70,7 +70,7 @@ export default class Products extends React.Component {
             </div>
         )
     }
-   
+
     render() {
         let items = [];
         if (this.props.product) {
@@ -158,7 +158,7 @@ export default class Products extends React.Component {
                                 <SiderBar></SiderBar>
                             </aside>
                         </Col>
-                        <Col lg={9}>
+                        <Col className='content-product-page' lg={9}>
                             <section className='sort-filter'>
                                 <Filter></Filter>
                             </section>

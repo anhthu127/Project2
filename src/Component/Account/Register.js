@@ -6,7 +6,7 @@ import FooterOfHome from '../Component/FooterOfHome';
 import { Row, Button, Col, Alert } from 'react-bootstrap';
 import { input, Icon } from 'semantic-ui-react';
 import { domain } from '../../Constant'
- 
+
 var lettersRegex = RegExp(/^[0-9a-zA-Z]+$/);
 var phoneRegex = RegExp(/^[0-9]+$/);
 const emailRegex = RegExp(
@@ -129,57 +129,69 @@ export default class RegisterComponent extends Component {
     };
 
     _validateForm(user, formError) {
-        // console.log()
         return (user.firstName && user.lastName && user.email && user.phoneNumber && user.address &&
             user.password && user.username && this.state.genera_code && formError.firstName.length == 0 && formError.lastName.length == 0
             && formError.email.length == 0 && formError.phoneNumber.length == 0 && formError.address.length == 0 && formError.username.length
             == 0 && formError.password == 0 && this.state.display != "block"
         ) ? true : false
     }
-    // CreateCart(data) {
-    //     console.log("fetchCart:  " + JSON.stringify(data))
-    //     return new Promise((resolve, reject) => {
-    //         const url = domain + '/cart'
-    //         fetch(url, {
-    //             method: 'POST',
-    //             headers: { "Content-type": "application/json" },
-    //             body: JSON.stringify(data)
-    //         })
-    //             .then((response) => response.json())
-    //             .then((res) => {
-    //                 resolve(res);
-    //             })
-    //             .catch((error) => {
-    //                 reject(error);
-    //             });
-    //     });
-    // }
+    CreateCart(data) {
+        console.log("hihi:  " + JSON.stringify(data))
+        return new Promise((resolve, reject) => {
+            const url = domain + '/cart'
+            fetch(url, {
+                method: 'POST',
+                headers: { "Content-type": "application/json" },
+                body: JSON.stringify(data)
+            })
+                .then((response) => response.json())
+                .then((res) => {
+                    resolve(res);
+                })
+                .catch((error) => {
+                    reject(error);
+                });
+        });
+    }
 
     async _onClickRegister() {
         if (this._validateForm(this.state.user, this.state.formErrors)) {
             if (this._checkCapcha()) {
-              await  this.setState({
+                await this.setState({
                     ...this.state,
                     isLoading: true
                 })
-                await this.props.createAccount(this.state.user)
-                console.log("props: " + JSON.stringify(this.props))
-                await this.setState({
-                    ...this.state,
-                    isLoading: this.props.isLoading
-                })
-                // console.log("data:  " + JSON.stringify(this.props.data))                             
-                // await this.props.refreshStore()
-                // window.location.href = `http://localhost:3000/login`
-                // throw new Error("sai roi sai roi!");
-
             }
+            await this.props.createAccount(this.state.user)
+            console.log("props: " + JSON.stringify(this.props))
+
+            // await this.setState({
+            //     ... this.state,
+            //     cart: {
+            //         ... this.state,
+            //         user_id: this.props.data.user_id
+            //     }
+            // })
+
+            // await this.CreateCart(this.state.cart)
+            await this.setState({
+                ...this.state,
+                isLoading: this.props.isLoading
+
+            })
+            // console.log("data:  " + JSON.stringify(this.props.data))                             
+            // await this.props.refreshStore()
+            window.location.href = `http://localhost:3000/login`
+            // throw new Error("sai roi sai roi!");
+
+            // }
         } else {
             alert("Điền đầy đủ các trường")
         }
 
         if (this.props.isLogin == true) {
-            console.log("2")
+            console.log("dayday: ")
+
         }
     }
 

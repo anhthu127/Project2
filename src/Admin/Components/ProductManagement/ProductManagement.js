@@ -85,7 +85,7 @@ export default class ProductManagement extends React.Component {
                             <ModalSearch {...this.props} />
                             <ButtonCreate  {...this.props} />
                             <div className="table-responsive">
-                                <table className="table table-striped">
+                                <table className="table table-bordered">
                                     <thead>
                                         <tr className="">
                                             <th>MSP</th>

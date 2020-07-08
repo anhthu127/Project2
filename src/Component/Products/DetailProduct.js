@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../Component/Header';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row, Alert } from 'react-bootstrap';
 import Slider from 'react-slick';
 import "../../Styles/DetailProduct.css";
 import unit from "../../Unit"
@@ -15,11 +15,14 @@ class DetailProduct extends React.Component {
             status: "Hết hàng",
             display: "inline-block",
             discount: "inline-block",
+            disable: false,
             color: "",
+            quantity: this.props.location.state.item.quantity,
             choosen_color: "",
             discount_price: "",
             isPress: false,
             concat: 0,
+            user_id: window.sessionStorage.getItem('id'),
             cart: {
                 user_id: '',
                 product: {
@@ -36,10 +39,11 @@ class DetailProduct extends React.Component {
             arrColor: [],
             cart_id: ''
         }
+
     }
     // data 
     componentDidMount() {
-        console.log("color: " + JSON.stringify(this.state.cart.product.quantity))
+        console.log("color: " + JSON.stringify(this.state.reciew.item))
         this.checkStatus();
         this.checkColor();
         if (this.state.reciew.item.discount == "" || this.state.reciew.item.discount == "0") {
@@ -47,6 +51,7 @@ class DetailProduct extends React.Component {
                 discount: "none"
             })
         }
+        this.props.initLoad(this.state.user_id)
     }
     async checkColor() {
         if (this.state.reciew.item.cluster.color) {
@@ -65,8 +70,8 @@ class DetailProduct extends React.Component {
         var temp = this.state.cart.product.quantity;
         console.log("increase: " + this.state.cart.product.quantity)
         temp++;
-        console.log("increase: " + temp)
-        if (temp >= 0) {
+        // console.log("increase: " + JSON.stringify(cart))
+        if (temp >= 0 && temp <= 5) {
             await this.setState({
                 ...this.state,
                 cart: {
@@ -74,6 +79,17 @@ class DetailProduct extends React.Component {
                     product: {
                         ...this.state.cart.product,
                         quantity: temp
+                    }
+                }
+            })
+        } else {
+            await this.setState({
+                ...this.state,
+                cart: {
+                    ...   this.state.cart,
+                    product: {
+                        ...this.state.cart.product,
+                        quantity: 5
                     }
                 }
             })
@@ -94,7 +110,8 @@ class DetailProduct extends React.Component {
                         ...this.state.product,
                         quantity: temp
                     }
-                }
+                },
+
             })
         } else {
             await this.setState({
@@ -140,23 +157,7 @@ class DetailProduct extends React.Component {
             })
         }
     }
-    getCart(data) {
-        return new Promise((resolve, reject) => {
-            const url = domain + '/cart/?user_id=' + data
-            fetch(url, {
-                method: "GET",
-                headers: { "Content-type": "application/json" },
-                // body: JSON.stringify(product)
-            })
-                .then((response) => response.json())
-                .then((res) => {
-                    resolve(res);
-                })
-                .catch((error) => {
-                    reject(error);
-                });
-        });
-    }
+
     fetchAPI(data, product) {
         console.log("fetchCart:  " + JSON.stringify(product))
         return new Promise((resolve, reject) => {
@@ -217,25 +218,9 @@ class DetailProduct extends React.Component {
             </div>
         )
     }
-    // async addToCartMore(item, count) {
 
-    //     const user = window.sessionStorage.getItem('id');
-    //     let cart;
-    //     let product;
-    //     console.log(".....: " + this.state.isPress + "...." + count)
-    //     if (this.state.isPress == true && count > 1) {
-    //         console.log("vào đây vào đây")
-    //         cart = await this.getCart(user);
-    //         console.log("cart: " + JSON.stringify(cart[0]))
-    //         product = cart[0].product;
-    //         console.log("product: " + JSON.stringify(product))
-    //     }
-    // let map = product.map((item, key) => {
-    //     console.log(JSON.stringify(item))
-    // })
-    // }
     async addToCart(item) {
-
+        let add = false;
         const user_id = window.sessionStorage.getItem('id');
         if (!user_id) {
             window.location.href = "http://localhost:3000/Login";
@@ -257,11 +242,12 @@ class DetailProduct extends React.Component {
             let oldCart;
             let cart_id;
             let newProduct = [];
-
+            let id = [];
             let productInCart;
-            oldCart = await this.getCart(user_id);
+            oldCart = this.props.cart
             oldCart = oldCart[0];
-            console.log("oldCart: " + JSON.stringify(oldCart.id))
+
+            console.log("oldCart: " + JSON.stringify(oldCart))
             cart_id = oldCart.id;
             if (oldCart.product) {
                 productInCart = oldCart.product;
@@ -271,33 +257,50 @@ class DetailProduct extends React.Component {
                 productInCart = [];
             }
             console.log("productInCart: " + JSON.stringify(productInCart))
-            console.log("productInCart: " + typeof (productInCart))
-            let count = 0;
+            // console.log("productInCart: " + typeof (productInCart))
             await productInCart.map((value, key) => {
+                id.push(value.product_id)
                 newProduct.push(value);
-                count++;
+
             })
-            let index = Object.keys(productInCart).length;
-            if (index == 0) {
-                index = 0;
-            } else { index = index + 1; }
-            console.log("item: " + index)
+            id = [... new Set(id)]
+            let bool = false;
+            for (let index = 0; index < id.length; index++) {
+                const element = id[index];
+                console.log(element + '   ' + this.state.reciew.item.id)
+                if (element === this.state.reciew.item.id) {
+                    bool = true
 
-            newProduct.push({
-                product_id: this.state.cart.product.product_id, quantity: this.state.cart.product.quantity, color: this.state.cart.product.color,
-                name: this.state.cart.product.name, price: this.state.cart.product.price, url: this.state.cart.product.url
-            })
-            console.log("newProduct: " + JSON.stringify(newProduct))
-
-            let newCart = {
-                user_id: user_id,
-                product: newProduct,
-                total_money: '',
-
+                }
             }
-            console.log("newCart: " + JSON.stringify(newCart))
+            console.log(bool)
+            if (bool === true) {
+                console.log('Exist')
+            }
+            else { add = true }
+            if (add === true) {
+                let index = Object.keys(productInCart).length;
+                if (index == 0) {
+                    index = 0;
+                } else { index = index + 1; }
+                console.log("item: " + index)
 
-            this.fetchAPI(cart_id, newCart);
+                newProduct.push({
+                    product_id: this.state.reciew.item.id, quantity: this.state.cart.product.quantity, color: this.state.cart.product.color,
+                    name: this.state.reciew.item.product_name, price: this.state.reciew.item.price, url: this.state.reciew.item.url
+                })
+                console.log("newProduct: " + JSON.stringify(newProduct))
+
+                let newCart = {
+                    user_id: user_id,
+                    product: newProduct,
+                    total_money: '',
+
+                }
+                console.log("newCart: " + JSON.stringify(newCart))
+
+                this.fetchAPI(cart_id, newCart);
+            }
         }
     }
     handleChange = (e) => {
@@ -333,8 +336,8 @@ class DetailProduct extends React.Component {
                 </button>
             )
         })
-
         return (
+
             <div>
                 <Header>
                 </Header>
@@ -400,9 +403,9 @@ class DetailProduct extends React.Component {
                                 >-</button>
                                 <input value={this.state.cart.product.quantity} name="input-quantity" onChange={this.handleChange}
                                     maxLength="2" name="quantity" className="quantity-input"></input>
-                                <button className="button-increase"
+                                <button className="button-increase" disabled={this.state.disable}
                                     onClick={() => {
-                                        this.Increase()
+                                        this.Increase(this.state.quantity)
                                     }}
                                 >+</button>
                             </Row>
@@ -419,7 +422,7 @@ class DetailProduct extends React.Component {
                                     // if (this.state.isPress == true) {
                                     //     this.addToCartMore(this.state.reciew.item, count)
                                     // } else {
-                                    this.addToCart(this.state.reciew.item)
+                                    this.addToCart(this.state.quantity)
                                     // }
                                 }}>Thêm vào giỏ</button>
                                 {/* </Link> */}

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Image, Button } from 'react-bootstrap'
+import Unit from "../../Unit"
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import '../../Styles/NorItem.css'
@@ -79,7 +80,7 @@ export default class NormalItem extends React.Component {
                             </div>
                             <div className='price-box'>
                                 <div>
-                                    <a>{item.price}</a>
+                                    <a>{Unit.formatCurrency(parseInt(item.price))}</a>
                                 </div>
                             </div>
                         </div>

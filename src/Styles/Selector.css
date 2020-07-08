@@ -1,0 +1,14 @@
+.item-selector{
+   justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.seletor-display{
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    width: 250px;
+    height: 30px;
+    border: 1px solid #cfcfcf;
+    padding:5px 30px 5px 30px;
+
+}

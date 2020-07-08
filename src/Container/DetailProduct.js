@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import * as action from "../Actions/CartAction"
-import Cart from '../Component/Cart/Cart'
-class CartContainer extends React.Component {
+import DetailProduct from '../Component/Products/DetailProduct'
+class DetailProductContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -13,7 +13,7 @@ class CartContainer extends React.Component {
     render() {
         return (
             <div>
-                <Cart {...this.props} />
+                <DetailProduct {...this.props} />
             </div>
         )
     }
@@ -27,8 +27,7 @@ const mapDispatchToProps = (dispatch) => {
     return {
         initLoad: (data) => {
             dispatch(action.GetCart(data))
-        },
-
+        }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(CartContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(DetailProductContainer);

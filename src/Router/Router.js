@@ -20,11 +20,13 @@ export default class Router extends React.Component {
               <Route path="/test" component={page.Test} />
               <Route exact path="/login/admin" component={page.AdminLogin} />
               <Route path="/admin" component={page.AdminHome} />
-              <Route  exact path="/" component={page.HomeContainer} />
+              <Route exact path="/" component={page.HomeContainer} />
               <Route path='/register' component={page.Register} />
               <Route path='/login' component={page.Login} />
               <Route path='/products' component={page.ProductContainer} />
               <Route exact path="/cart" component={page.Cart} />
+              <Route path="/receipt " component={page.ReceiptUser} />
+              <Route exact path="/Checkout" component={page.Checkout} />
               <Route path='/detail/:id' component={page.DetailProduct} />
               {/* <Route exact path='/products/:id' component={page.ProductContainer} /> */}
               <Route path='/product/best-selling' component={page.BestSelling} />
