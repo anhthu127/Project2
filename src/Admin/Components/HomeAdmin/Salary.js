@@ -1,7 +1,7 @@
 import React from "react"
 import HomeSearch from "../HomeAdmin/HomeSearch"
 import DetailStaff from "./ButtonDetail";
-
+import Unit from "../../../Unit"
 export default class Salary extends React.Component {
     constructor(props) {
         super(props)
@@ -48,10 +48,10 @@ export default class Salary extends React.Component {
                         <td colSpan="1" className="initLoad">{item.full_name} </td>
                         <td colSpan="1" className="initLoad">{item.identify}</td>
                         <td colSpan="1" className="initLoad">{item.phone_num}</td>
-                        <td colSpan="1" className="initLoad">{item.date}</td>
-                        <td colSpan="1" className="initLoad">{item.total_hours}</td>
+                        <td colSpan="1" className="initLoad">{item.total_day}</td>
+                <td colSpan="1" className="initLoad">{item.total_day*5}</td>
                         <td colSpan="1" className="initLoad">{item.salary_per_hour}</td>
-                        <td colSpan="1" className="initLoad">{item.total_salary}</td>
+                        <td colSpan="1" className="initLoad">{Unit.formatCurrency(parseInt(item.total_day*5*item.salary_per_hour))}</td>
                         <td colSpan="2" className="actions">
                             <DetailStaff item={item} update={update} {...this.props} />
                         </td>
